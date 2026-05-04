@@ -75,7 +75,7 @@
     /* Hamburger */
     .nav-hamburger {
       display: none; flex-direction: column; gap: 5px;
-      padding: var(--space-2); z-index: 101; position: relative;
+      padding: var(--space-2); z-index: 201; position: relative;
     }
     .nav-hamburger span {
       display: block; width: 24px; height: 2px;
@@ -90,9 +90,8 @@
     .nav-backdrop {
       display: none; position: fixed; inset: 0;
       background: rgba(20,15,10,0.55); z-index: 97;
-      opacity: 0; transition: opacity 0.35s ease;
     }
-    .nav-backdrop.open { display: block; opacity: 1; }
+    .nav-backdrop.open { display: block; }
 
     /* ── Hero ── */
     .hero { min-height: 100dvh; display: grid; place-items: center; position: relative; overflow: hidden; text-align: center; padding: var(--space-24) var(--space-6); }
@@ -178,40 +177,70 @@
     .footer-divider { width: 40px; height: 1px; background: var(--color-gold); margin: var(--space-6) auto; }
     .footer-note { font-size: var(--text-xs); }
 
+    /* ── Desktop: hide hamburger ── */
+    @media (min-width: 769px) {
+      .nav-hamburger { display: none !important; }
+      .nav-backdrop { display: none !important; }
+    }
+
     /* ── Mobile ── */
     @media (max-width: 768px) {
-  nav { padding: var(--space-4) var(--space-4); }
+      nav { padding: var(--space-4) var(--space-4); }
 
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    inset: 0;
-    top: 0;
-    background: var(--color-bg);
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-8);
-    z-index: 98;
-    transform: translateY(-100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    padding-top: 72px;
-    list-style: none;
-  }
-  .nav-links.open { transform: translateY(0); }
-  .nav-links a { ... }
-  ...
-}
+      /* Hide desktop nav links by default on mobile */
+      .nav-links {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-8);
+        background: var(--color-bg);
+        z-index: 200;
+        list-style: none;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+      }
+      .nav-links.open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+      }
+      .nav-links a {
+        font-size: var(--text-lg);
+        letter-spacing: 0.12em;
+        color: var(--color-text);
+        padding: var(--space-3) var(--space-6);
+        border-bottom: 1px solid transparent;
+        transition: color var(--transition), border-color var(--transition);
+        text-align: center;
+      }
+      .nav-links a:hover {
+        color: var(--color-primary);
+        border-bottom-color: var(--color-gold);
+      }
 
-@media (max-width: 480px) {
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-item:first-child { grid-column: span 1; }
-}
+      .nav-hamburger { display: flex; }
+
+      .venue-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:first-child { grid-column: span 2; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: span 1; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Backdrop (behind menu, above page) -->
   <div class="nav-backdrop" id="navBackdrop"></div>
 
   <nav>
@@ -384,7 +413,7 @@
   </footer>
 
   <script>
-    // ─── Translations ────────────────────────────────────────────────────────
+    // ─── Translations ─────────────────────────────────────────────────────────
     const translations = {
       en: {
         'nav-schedule': 'Schedule', 'nav-gallery': 'Gallery', 'nav-venue': 'Venue', 'nav-travel': 'Travel',
@@ -394,8 +423,7 @@
         'countdown-label': 'Days until the wedding',
         'cd-days': 'Days', 'cd-hours': 'Hours', 'cd-mins': 'Minutes', 'cd-secs': 'Seconds',
         'schedule-label': 'The Celebration', 'schedule-title': 'Three Days in Ronda',
-        'day1-day': 'Day One · Friday', 'day1-date': '28th May 2027',
-        'day1-event': 'Pre-Wedding Drinks & Tapas',
+        'day1-day': 'Day One · Friday', 'day1-date': '28th May 2027', 'day1-event': 'Pre-Wedding Drinks & Tapas',
         'day1-desc': 'Join us for an informal evening of drinks and tapas as we welcome you to Ronda. A relaxed gathering to reconnect with old friends and make new ones before the big day.<br><br><em>Venue to be confirmed — watch this space.</em>',
         'day2-day': 'Day Two · Saturday', 'day2-date': '29th May 2027', 'day2-event': 'The Wedding',
         'day2-desc': "The main event! Join us to celebrate our marriage in the stunning setting of Ronda, one of Spain's most beautiful white hilltop towns. Full details — ceremony time, dress code and directions — coming soon.<br><br><em>Venue: Finca La Marabulla, Ronda.</em>",
@@ -430,8 +458,7 @@
         'countdown-label': 'Días para la boda',
         'cd-days': 'Días', 'cd-hours': 'Horas', 'cd-mins': 'Minutos', 'cd-secs': 'Segundos',
         'schedule-label': 'La Celebración', 'schedule-title': 'Tres Días en Ronda',
-        'day1-day': 'Día Uno · Viernes', 'day1-date': '28 de mayo de 2027',
-        'day1-event': 'Cócteles y Tapas Pre-Boda',
+        'day1-day': 'Día Uno · Viernes', 'day1-date': '28 de mayo de 2027', 'day1-event': 'Cócteles y Tapas Pre-Boda',
         'day1-desc': 'Únanse a nosotros para una velada informal de copas y tapas mientras les damos la bienvenida a Ronda. Una reunión relajada para reencontrarse con viejos amigos y hacer nuevos antes del gran día.<br><br><em>Lugar por confirmar — ¡estén atentos!</em>',
         'day2-day': 'Día Dos · Sábado', 'day2-date': '29 de mayo de 2027', 'day2-event': 'La Boda',
         'day2-desc': '¡El evento principal! Acompáñennos a celebrar nuestra boda en el impresionante escenario de Ronda, uno de los pueblos blancos más hermosos de España. Los detalles completos — hora de la ceremonia, código de vestimenta e instrucciones — próximamente.<br><br><em>Lugar: Finca La Marabulla, Ronda.</em>',
@@ -466,8 +493,7 @@
         'countdown-label': 'Laethanta go dtí an bhainis',
         'cd-days': 'Laethanta', 'cd-hours': 'Uaireanta', 'cd-mins': 'Nóiméid', 'cd-secs': 'Soicindí',
         'schedule-label': 'An Ceiliúradh', 'schedule-title': 'Trí Lá i Ronda',
-        'day1-day': 'Lá a hAon · Aoine', 'day1-date': '28 Bealtaine 2027',
-        'day1-event': 'Deochanna & Tapas Réamh-Bhainis',
+        'day1-day': 'Lá a hAon · Aoine', 'day1-date': '28 Bealtaine 2027', 'day1-event': 'Deochanna & Tapas Réamh-Bhainis',
         'day1-desc': 'Bígí linn le haghaidh tráthnóna neamhfhoirmiúil deochanna agus tapas agus sinn ag fáiltiú romhaibh go Ronda. Cruinniú suaimhneach chun athcheangal a dhéanamh le seanchairde agus cairde nua a dhéanamh roimh an lá mór.<br><br><em>Ionad le deimhniú — coinnígí súil air seo.</em>',
         'day2-day': 'Lá a Dó · Satharn', 'day2-date': '29 Bealtaine 2027', 'day2-event': 'An Bhainis',
         'day2-desc': "An príomheachtra! Bígí linn chun ár bpósadh a cheiliúradh i suíomh iontach Ronda, ceann de bhailte bána is áille na Spáinne ar mhullach cnoic. Sonraí iomlána — am na searmanas, cód éadaigh agus treoracha — ag teacht go luath.<br><br><em>Ionad: Finca La Marabulla, Ronda.</em>",
@@ -512,7 +538,7 @@
     }
     setLanguage(currentLang);
 
-    // ─── Mobile Nav — Option 1: Full-screen overlay ──────────────────────────
+    // ─── Mobile Nav ───────────────────────────────────────────────────────────
     const hamburger   = document.getElementById('hamburger');
     const navLinks    = document.getElementById('navLinks');
     const navBackdrop = document.getElementById('navBackdrop');
@@ -532,11 +558,9 @@
     hamburger.addEventListener('click', () => navLinks.classList.contains('open') ? closeMenu() : openMenu());
     navBackdrop.addEventListener('click', closeMenu);
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-    // Close on Escape key
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-    // ─── Countdown ───────────────────────────────────────────────────────────
+    // ─── Countdown ────────────────────────────────────────────────────────────
     function updateCountdown() {
       const target = new Date('2027-05-29T12:00:00');
       const now    = new Date();
@@ -558,7 +582,7 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // ─── Scroll reveals ──────────────────────────────────────────────────────
+    // ─── Scroll reveals ───────────────────────────────────────────────────────
     const reveals = document.querySelectorAll('.schedule-card, .travel-card, .gallery-item, .venue-grid');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
