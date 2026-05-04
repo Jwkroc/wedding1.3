@@ -240,40 +240,6 @@
   </style>
 </head>
 <body>
-   <!-- PASSWORD GATE DISABLED
-  <div id="password-gate" style="
-    position:fixed; inset:0; background:#1a120a;
-    display:flex; align-items:center; justify-content:center;
-    z-index:9999; font-family:'Cormorant Garamond', Georgia, serif;">
-    <div style="text-align:center; color:#f5f0e8; display:flex; flex-direction:column; align-items:center; gap:1.2rem; padding:2rem;">
-      <svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 100 100'>
-        <path d='M28,42 C20,39 12,43 12,52 C12,60 20,65 28,63' fill='none' stroke='#c49a3c' stroke-width='5' stroke-linecap='round'/>
-        <path d='M72,42 C80,39 88,43 88,52 C88,60 80,65 72,63' fill='none' stroke='#c49a3c' stroke-width='5' stroke-linecap='round'/>
-        <path d='M50,73 C50,73 27,56 27,41 a12,12 0 0,1 23,0 a12,12 0 0,1 23,0 C73,56 50,73 50,73z' fill='#c49a3c'/>
-        <polyline points='36,29 36,19 43,24 50,15 57,24 64,19 64,29' fill='none' stroke='#c49a3c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/>
-      </svg>
-      <p style="font-size:0.75rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(196,154,60,0.75);">Jerome &amp; Enrique</p>
-      <h2 style="font-size:1.6rem; font-weight:300; font-style:italic; color:#fdf8f2; letter-spacing:0.05em;">28 – 30 May 2027</h2>
-      <p style="font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(240,230,210,0.6);">Enter password to continue</p>
-      <input type="password" id="pwd-input" placeholder="Password"
-        style="padding:0.75rem 1.5rem; font-size:1rem; font-family:inherit;
-          border:1px solid rgba(196,154,60,0.5); background:rgba(255,255,255,0.05);
-          color:#fdf8f2; text-align:center; letter-spacing:0.15em; outline:none;
-          border-radius:2px; width:220px;" />
-      <button onclick="checkPassword()"
-        style="padding:0.7rem 2.5rem; background:transparent;
-          border:1px solid #c49a3c; color:#c49a3c;
-          letter-spacing:0.18em; font-size:0.78rem; text-transform:uppercase;
-          font-family:inherit; cursor:pointer; border-radius:2px;
-          transition:all 0.25s;"
-        onmouseover="this.style.background='#c49a3c';this.style.color='#1a120a';"
-        onmouseout="this.style.background='transparent';this.style.color='#c49a3c';">
-        Enter
-      </button>
-      <p id="pwd-error" style="display:none; color:#c0392b; font-size:0.8rem; letter-spacing:0.08em;">Incorrect password. Please try again.</p>
-    </div>
-  </div>
-
 
   <div class="nav-backdrop" id="navBackdrop"></div>
 
@@ -645,27 +611,6 @@
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
     });
-  
-    // ─── Password Gate ────────────────────────────────────────────────────────
-    function checkPassword() {
-      const input = document.getElementById('pwd-input').value;
-      if (input.toLowerCase() === 'emjw2026') {
-        document.getElementById('password-gate').style.display = 'none';
-        sessionStorage.setItem('unlocked', 'true');
-      } else {
-        document.getElementById('pwd-error').style.display = 'block';
-        document.getElementById('pwd-input').value = '';
-        document.getElementById('pwd-input').focus();
-      }
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      const inp = document.getElementById('pwd-input');
-      if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
-      if (sessionStorage.getItem('unlocked') === 'true') {
-        document.getElementById('password-gate').style.display = 'none';
-      }
-    });
-
-</script>
+  </script>
 </body>
 </html>
