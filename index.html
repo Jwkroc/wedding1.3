@@ -7,519 +7,135 @@
   <meta name="description" content="Join us to celebrate the wedding of Jerome Wholihane & Enrique Marenco Jimenez in beautiful Ronda, Málaga, Spain — 28–30 May 2027." />
   <meta property="og:title" content="Jerome & Enrique — Ronda 2027" />
   <meta property="og:description" content="Three days of celebration in Ronda, Málaga, Spain." />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
   <style>
-    /* ============================================================
-       DESIGN TOKENS
-    ============================================================ */
     :root {
-      /* Warm terracotta-cream palette inspired by Andalusia */
-      --color-bg:             #f9f6f1;
-      --color-surface:        #fdfaf6;
-      --color-surface-2:      #f4ede3;
-      --color-divider:        #e2d6c8;
-      --color-border:         #d9ccbb;
-
-      --color-text:           #2a1f14;
-      --color-text-muted:     #7a6a58;
-      --color-text-faint:     #b5a494;
-
-      --color-primary:        #8b3a2a;   /* deep terracotta */
-      --color-primary-hover:  #6e2d20;
-      --color-gold:           #c49a3c;
-      --color-gold-light:     #e8d5a0;
-
+      --color-bg: #f9f6f1; --color-surface: #fdfaf6; --color-surface-2: #f4ede3;
+      --color-divider: #e2d6c8; --color-border: #d9ccbb;
+      --color-text: #2a1f14; --color-text-muted: #7a6a58; --color-text-faint: #b5a494;
+      --color-primary: #8b3a2a; --color-primary-hover: #6e2d20;
+      --color-gold: #c49a3c; --color-gold-light: #e8d5a0;
       --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Jost', 'Helvetica Neue', sans-serif;
-
-      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
-      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
-      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
-      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
-      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
-      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
-      --text-hero: clamp(3rem,     1rem    + 6vw,    7rem);
-
-      --space-1: 0.25rem; --space-2: 0.5rem;  --space-3: 0.75rem;
-      --space-4: 1rem;    --space-6: 1.5rem;  --space-8: 2rem;
-      --space-10: 2.5rem; --space-12: 3rem;   --space-16: 4rem;
-      --space-20: 5rem;   --space-24: 6rem;
-
+      --font-body: 'Jost', 'Helvetica Neue', sans-serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(3rem, 1rem + 6vw, 7rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem; --space-6: 1.5rem; --space-8: 2rem;
+      --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem;
+      --space-20: 5rem; --space-24: 6rem;
       --radius-sm: 0.25rem; --radius-md: 0.5rem;
       --radius-lg: 0.75rem; --radius-full: 9999px;
-
-      --shadow-sm: 0 1px 3px oklch(0.2 0.04 50 / 0.08);
-      --shadow-md: 0 4px 16px oklch(0.2 0.04 50 / 0.10);
-      --shadow-lg: 0 12px 40px oklch(0.2 0.04 50 / 0.14);
-
+      --shadow-sm: 0 1px 3px rgba(40,20,10,0.08);
+      --shadow-md: 0 4px 16px rgba(40,20,10,0.10);
+      --shadow-lg: 0 12px 40px rgba(40,20,10,0.14);
       --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
-      --content-narrow: 640px;
-      --content-default: 960px;
-      --content-wide: 1200px;
+      --content-narrow: 640px; --content-default: 960px; --content-wide: 1200px;
     }
-
-    /* ============================================================
-       BASE RESET
-    ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html {
-      -webkit-font-smoothing: antialiased;
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
-    }
-    body {
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      color: var(--color-text);
-      background: var(--color-bg);
-      line-height: 1.7;
-    }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background: var(--color-bg); line-height: 1.7; }
     img { display: block; max-width: 100%; height: auto; }
-    h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; }
-    p, li { text-wrap: pretty; }
+    h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.15; }
     a { color: inherit; text-decoration: none; }
     button { cursor: pointer; background: none; border: none; font: inherit; }
-
-    /* ============================================================
-       NAV
-    ============================================================ */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: var(--space-4) var(--space-8);
-      background: oklch(from var(--color-bg) l c h / 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.08);
-      transition: background var(--transition);
+      background: rgba(249,246,241,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(42,31,20,0.08);
     }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      color: var(--color-primary);
-    }
-    .nav-links {
-      display: flex; gap: var(--space-8); list-style: none;
-    }
-    .nav-links a {
-      font-size: var(--text-sm); font-weight: 400;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--color-text-muted);
-      transition: color var(--transition);
-    }
+    .nav-logo { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400; color: var(--color-primary); }
+    .nav-links { display: flex; gap: var(--space-8); list-style: none; }
+    .nav-links a { font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); transition: color var(--transition); }
     .nav-links a:hover { color: var(--color-primary); }
-
-    .nav-hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      padding: var(--space-2); background: none; border: none; cursor: pointer;
-    }
-    .nav-hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--color-text); border-radius: 2px;
-      transition: var(--transition);
-    }
-
-    /* ============================================================
-       HERO
-    ============================================================ */
-    .hero {
-      min-height: 100dvh;
-      display: grid; place-items: center;
-      position: relative; overflow: hidden;
-      text-align: center;
-      padding: var(--space-24) var(--space-6);
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('./photos/pier.jpg');
-      background-size: cover; background-position: center 30%;
-      filter: brightness(0.45);
-      z-index: 0;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom,
-        oklch(0.15 0.04 40 / 0.3) 0%,
-        oklch(0.15 0.04 40 / 0.5) 60%,
-        oklch(0.12 0.04 40 / 0.7) 100%);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 800px;
-    }
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--color-gold-light); font-family: var(--font-body); font-weight: 400;
-      margin-bottom: var(--space-6);
-    }
-    .hero-names {
-      font-size: var(--text-hero);
-      font-weight: 300; font-style: italic;
-      color: #fdf8f2;
-      line-height: 1.0;
-      margin-bottom: var(--space-4);
-    }
-    .hero-ampersand {
-      color: var(--color-gold-light);
-      font-weight: 300;
-    }
-    .hero-date {
-      font-family: var(--font-body);
-      font-size: var(--text-sm); letter-spacing: 0.15em; text-transform: uppercase;
-      color: oklch(0.9 0.02 60 / 0.85);
-      margin-bottom: var(--space-8);
-    }
-    .hero-location {
-      font-family: var(--font-display); font-style: italic;
-      font-size: var(--text-xl); font-weight: 300;
-      color: var(--color-gold-light);
-      margin-bottom: var(--space-10);
-    }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: var(--space-2);
-      padding: var(--space-3) var(--space-8);
-      border: 1px solid oklch(0.85 0.05 60 / 0.6);
-      color: #fdf8f2;
-      font-size: var(--text-sm); letter-spacing: 0.12em; text-transform: uppercase;
-      font-family: var(--font-body); font-weight: 400;
-      border-radius: var(--radius-full);
-      transition: background var(--transition), border-color var(--transition);
-    }
-    .hero-cta:hover {
-      background: oklch(0.85 0.05 60 / 0.15);
-      border-color: oklch(0.85 0.05 60 / 0.9);
-    }
-    .hero-scroll {
-      position: absolute; bottom: var(--space-8); left: 50%; transform: translateX(-50%);
-      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
-      color: oklch(0.85 0.02 60 / 0.6); font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .hero-scroll-line {
-      width: 1px; height: 48px;
-      background: linear-gradient(to bottom, oklch(0.85 0.02 60 / 0.6), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; transform: scaleY(1); }
-      50% { opacity: 1; transform: scaleY(1.1); }
-    }
-
-    /* ============================================================
-       SECTION SHARED
-    ============================================================ */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: var(--space-2); }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--color-text); border-radius: 2px; }
+    .hero { min-height: 100dvh; display: grid; place-items: center; position: relative; overflow: hidden; text-align: center; padding: var(--space-24) var(--space-6); }
+    .hero-bg { position: absolute; inset: 0; background-image: url('./photos/pier.jpg'); background-size: cover; background-position: center 30%; filter: brightness(0.45); z-index: 0; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,15,10,0.3) 0%, rgba(20,15,10,0.5) 60%, rgba(15,10,8,0.7) 100%); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+    .hero-eyebrow { display: inline-block; font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-gold-light); margin-bottom: var(--space-6); }
+    .hero-names { font-size: var(--text-hero); font-weight: 300; font-style: italic; color: #fdf8f2; line-height: 1.0; margin-bottom: var(--space-4); }
+    .hero-ampersand { color: var(--color-gold-light); }
+    .hero-date { font-family: var(--font-body); font-size: var(--text-sm); letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,230,210,0.85); margin-bottom: var(--space-8); }
+    .hero-location { font-family: var(--font-display); font-style: italic; font-size: var(--text-xl); font-weight: 300; color: var(--color-gold-light); margin-bottom: var(--space-10); }
+    .hero-cta { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-8); border: 1px solid rgba(220,200,160,0.6); color: #fdf8f2; font-size: var(--text-sm); letter-spacing: 0.12em; text-transform: uppercase; border-radius: var(--radius-full); transition: background var(--transition); }
+    .hero-cta:hover { background: rgba(220,200,160,0.15); }
+    .hero-scroll { position: absolute; bottom: var(--space-8); left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: var(--space-2); color: rgba(220,200,160,0.6); font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero-scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(220,200,160,0.6), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+    @keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
     section { padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-6); }
     .container { max-width: var(--content-default); margin-inline: auto; }
     .container-narrow { max-width: var(--content-narrow); margin-inline: auto; }
-
-    .section-label {
-      display: block;
-      font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--color-gold); font-family: var(--font-body); font-weight: 500;
-      margin-bottom: var(--space-3);
-    }
-    .section-title {
-      font-size: var(--text-2xl); font-weight: 300; font-style: italic;
-      color: var(--color-text);
-      margin-bottom: var(--space-6);
-    }
-    .section-divider {
-      width: 60px; height: 1px;
-      background: var(--color-gold);
-      margin-bottom: var(--space-8);
-    }
-
-    /* ============================================================
-       COUNTDOWN
-    ============================================================ */
-    .countdown-section {
-      background: var(--color-primary);
-      padding: var(--space-12) var(--space-6);
-      text-align: center;
-    }
-    .countdown-label {
-      font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase;
-      color: oklch(0.85 0.05 40 / 0.7); font-family: var(--font-body);
-      margin-bottom: var(--space-6);
-    }
-    .countdown-grid {
-      display: flex; justify-content: center; gap: var(--space-8); flex-wrap: wrap;
-    }
+    .section-label { display: block; font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-gold); font-weight: 500; margin-bottom: var(--space-3); }
+    .section-title { font-size: var(--text-2xl); font-weight: 300; font-style: italic; margin-bottom: var(--space-6); }
+    .section-divider { width: 60px; height: 1px; background: var(--color-gold); margin-bottom: var(--space-8); }
+    .countdown-section { background: var(--color-primary); padding: var(--space-12) var(--space-6); text-align: center; }
+    .countdown-label { font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase; color: rgba(220,190,150,0.7); margin-bottom: var(--space-6); }
+    .countdown-grid { display: flex; justify-content: center; gap: var(--space-8); flex-wrap: wrap; }
     .countdown-unit { text-align: center; }
-    .countdown-number {
-      display: block;
-      font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 300;
-      color: #fdf8f2; line-height: 1;
-      margin-bottom: var(--space-1);
-    }
-    .countdown-text {
-      font-size: var(--text-xs); letter-spacing: 0.15em; text-transform: uppercase;
-      color: oklch(0.85 0.05 40 / 0.65);
-    }
-
-    /* ============================================================
-       SCHEDULE / TIMELINE
-    ============================================================ */
+    .countdown-number { display: block; font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 300; color: #fdf8f2; line-height: 1; margin-bottom: var(--space-1); }
+    .countdown-text { font-size: var(--text-xs); letter-spacing: 0.15em; text-transform: uppercase; color: rgba(220,190,150,0.65); }
     .schedule-section { background: var(--color-surface); }
-    .schedule-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(280px,100%), 1fr));
-      gap: var(--space-6);
-      margin-top: var(--space-8);
-    }
-    .schedule-card {
-      background: var(--color-bg);
-      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
-      border-radius: var(--radius-lg);
-      padding: var(--space-8);
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow var(--transition), transform var(--transition);
-    }
-    .schedule-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-    .schedule-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--color-gold);
-    }
-    .schedule-day {
-      font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--color-gold); font-weight: 500;
-      margin-bottom: var(--space-2);
-    }
-    .schedule-date {
-      font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300;
-      color: var(--color-text); margin-bottom: var(--space-4);
-    }
-    .schedule-event {
-      font-family: var(--font-display); font-style: italic;
-      font-size: var(--text-lg); color: var(--color-primary);
-      margin-bottom: var(--space-3);
-    }
-    .schedule-desc {
-      font-size: var(--text-sm); color: var(--color-text-muted);
-      line-height: 1.65;
-    }
-    .schedule-icon {
-      position: absolute; bottom: var(--space-6); right: var(--space-6);
-      font-size: 2rem; opacity: 0.12;
-    }
-
-    /* ============================================================
-       GALLERY
-    ============================================================ */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      gap: var(--space-3);
-      margin-top: var(--space-8);
-    }
-    .gallery-item {
-      overflow: hidden; border-radius: var(--radius-md);
-      background: var(--color-surface-2);
-    }
-    .gallery-item:first-child {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-    .gallery-item img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
-      aspect-ratio: 4/3;
-    }
+    .schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px,100%), 1fr)); gap: var(--space-6); margin-top: var(--space-8); }
+    .schedule-card { background: var(--color-bg); border: 1px solid rgba(42,31,20,0.08); border-radius: var(--radius-lg); padding: var(--space-8); position: relative; overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow var(--transition), transform var(--transition); }
+    .schedule-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .schedule-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--color-gold); }
+    .schedule-day { font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gold); font-weight: 500; margin-bottom: var(--space-2); }
+    .schedule-date { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; margin-bottom: var(--space-4); }
+    .schedule-event { font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-primary); margin-bottom: var(--space-3); }
+    .schedule-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
+    .schedule-icon { position: absolute; bottom: var(--space-6); right: var(--space-6); font-size: 2rem; opacity: 0.12; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-top: var(--space-8); }
+    .gallery-item { overflow: hidden; border-radius: var(--radius-md); background: var(--color-surface-2); }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); aspect-ratio: 4/3; }
     .gallery-item:first-child img { aspect-ratio: unset; height: 100%; }
     .gallery-item:hover img { transform: scale(1.04); }
-
-    /* ============================================================
-       VENUE
-    ============================================================ */
     .venue-section { background: var(--color-surface-2); }
-    .venue-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-12);
-      align-items: center;
-      margin-top: var(--space-8);
-    }
-    .venue-image {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-    .venue-image img {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover;
-    }
-    .venue-details h3 {
-      font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; font-style: italic;
-      color: var(--color-primary); margin-bottom: var(--space-3);
-    }
-    .venue-details p {
-      font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);
-      max-width: 48ch;
-    }
-    .venue-link {
-      display: inline-flex; align-items: center; gap: var(--space-2);
-      font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.05em;
-      color: var(--color-primary);
-      border-bottom: 1px solid var(--color-gold);
-      padding-bottom: 2px;
-      transition: color var(--transition), border-color var(--transition);
-    }
-    .venue-link:hover { color: var(--color-gold); border-color: var(--color-primary); }
-
-    /* ============================================================
-       RSVP
-    ============================================================ */
-    .rsvp-section {
-      background: var(--color-text);
-      color: #fdf8f2;
-      text-align: center;
-    }
+    .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; margin-top: var(--space-8); }
+    .venue-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .venue-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .venue-details h3 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; font-style: italic; color: var(--color-primary); margin-bottom: var(--space-3); }
+    .venue-details p { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); max-width: 48ch; }
+    .venue-link { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); font-weight: 500; color: var(--color-primary); border-bottom: 1px solid var(--color-gold); padding-bottom: 2px; transition: color var(--transition); }
+    .venue-link:hover { color: var(--color-gold); }
+    .rsvp-section { background: var(--color-text); color: #fdf8f2; text-align: center; }
     .rsvp-section .section-label { color: var(--color-gold-light); }
     .rsvp-section .section-title { color: #fdf8f2; }
     .rsvp-section .section-divider { margin-inline: auto; }
-    .rsvp-form {
-      max-width: 560px; margin-inline: auto;
-      display: flex; flex-direction: column; gap: var(--space-4);
-      margin-top: var(--space-8);
-    }
-    .rsvp-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-    .form-group { display: flex; flex-direction: column; gap: var(--space-2); }
-    .form-group label {
-      font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase;
-      color: oklch(0.85 0.02 60 / 0.6);
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      background: oklch(0.95 0.01 60 / 0.06);
-      border: 1px solid oklch(0.85 0.02 60 / 0.2);
-      border-radius: var(--radius-md);
-      padding: var(--space-3) var(--space-4);
-      color: #fdf8f2; font-family: var(--font-body); font-size: var(--text-sm);
-      transition: border-color var(--transition);
-      outline: none;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: oklch(0.85 0.02 60 / 0.3); }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--color-gold); }
-    .form-group select option { background: #2a1f14; }
-    .rsvp-btn {
-      padding: var(--space-4) var(--space-10);
-      background: var(--color-gold);
-      color: var(--color-text);
-      font-family: var(--font-body); font-size: var(--text-sm);
-      font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-      border-radius: var(--radius-full);
-      border: none; cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
-      align-self: center;
-      margin-top: var(--space-2);
-    }
+    .rsvp-btn { padding: var(--space-4) var(--space-10); background: var(--color-gold); color: var(--color-text); font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border-radius: var(--radius-full); border: none; cursor: pointer; transition: background var(--transition), transform var(--transition); display: inline-block; text-decoration: none; }
     .rsvp-btn:hover { background: #d4aa4a; transform: translateY(-1px); }
-    .rsvp-success {
-      display: none;
-      padding: var(--space-6);
-      background: oklch(0.95 0.01 60 / 0.06);
-      border: 1px solid oklch(0.85 0.02 60 / 0.2);
-      border-radius: var(--radius-lg);
-      margin-top: var(--space-4);
-      font-family: var(--font-display); font-style: italic; font-size: var(--text-lg);
-      color: var(--color-gold-light);
-    }
-
-    /* ============================================================
-       TRAVEL
-    ============================================================ */
-    .travel-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(240px,100%), 1fr));
-      gap: var(--space-6);
-      margin-top: var(--space-8);
-    }
-    .travel-card {
-      padding: var(--space-6);
-      background: var(--color-surface);
-      border: 1px solid oklch(from var(--color-text) l c h / 0.07);
-      border-radius: var(--radius-lg);
-    }
+    .travel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px,100%), 1fr)); gap: var(--space-6); margin-top: var(--space-8); }
+    .travel-card { padding: var(--space-6); background: var(--color-surface); border: 1px solid rgba(42,31,20,0.07); border-radius: var(--radius-lg); }
     .travel-card-icon { font-size: 1.75rem; margin-bottom: var(--space-3); }
-    .travel-card h3 {
-      font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400;
-      margin-bottom: var(--space-2);
-    }
-    .travel-card p {
-      font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65;
-    }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    footer {
-      background: var(--color-text);
-      color: oklch(0.85 0.02 60 / 0.55);
-      text-align: center;
-      padding: var(--space-12) var(--space-6);
-    }
-    .footer-names {
-      font-family: var(--font-display); font-style: italic;
-      font-size: var(--text-xl); font-weight: 300;
-      color: #fdf8f2; margin-bottom: var(--space-2);
-    }
-    .footer-date {
-      font-size: var(--text-xs); letter-spacing: 0.15em; text-transform: uppercase;
-      margin-bottom: var(--space-6);
-    }
-    .footer-divider {
-      width: 40px; height: 1px; background: var(--color-gold);
-      margin: var(--space-6) auto;
-    }
+    .travel-card h3 { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400; margin-bottom: var(--space-2); }
+    .travel-card p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
+    footer { background: var(--color-text); color: rgba(220,200,160,0.55); text-align: center; padding: var(--space-12) var(--space-6); }
+    .footer-names { font-family: var(--font-display); font-style: italic; font-size: var(--text-xl); font-weight: 300; color: #fdf8f2; margin-bottom: var(--space-2); }
+    .footer-date { font-size: var(--text-xs); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: var(--space-6); }
+    .footer-divider { width: 40px; height: 1px; background: var(--color-gold); margin: var(--space-6) auto; }
     .footer-note { font-size: var(--text-xs); }
-
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-      .nav-links.open {
-        display: flex; flex-direction: column;
-        position: fixed; inset: 0; top: 64px;
-        background: var(--color-bg);
-        align-items: center; justify-content: center;
-        gap: var(--space-8); z-index: 99;
-      }
+      .nav-links { display: none; } .nav-hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 0; top: 64px; background: var(--color-bg); align-items: center; justify-content: center; gap: var(--space-8); z-index: 99; }
       .nav-links.open a { font-size: var(--text-lg); }
       .venue-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item:first-child { grid-column: span 2; }
-      .rsvp-row { grid-template-columns: 1fr; }
-      .countdown-grid { gap: var(--space-6); }
     }
-    @media (max-width: 480px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item:first-child { grid-column: span 1; }
-    }
+    @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } .gallery-item:first-child { grid-column: span 1; } }
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <nav>
     <div class="nav-logo">J <span style="color:var(--color-gold)">♥</span> E</div>
     <ul class="nav-links" id="navLinks">
@@ -534,28 +150,19 @@
     </button>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <span class="hero-eyebrow">We're getting married</span>
-      <h1 class="hero-names">
-        Jerome<br>
-        <span class="hero-ampersand">&amp;</span><br>
-        Enrique
-      </h1>
+      <h1 class="hero-names">Jerome<br><span class="hero-ampersand">&amp;</span><br>Enrique</h1>
       <p class="hero-date">28 – 30 May 2027 &nbsp;·&nbsp; Ronda, Málaga, Spain</p>
       <p class="hero-location">Ronda, Andalucía</p>
       <a href="#rsvp" class="hero-cta">RSVP Now</a>
     </div>
-    <div class="hero-scroll">
-      <div class="hero-scroll-line"></div>
-      <span>Scroll</span>
-    </div>
+    <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
   </section>
 
-  <!-- COUNTDOWN -->
   <div class="countdown-section">
     <p class="countdown-label">Days until the wedding</p>
     <div class="countdown-grid" id="countdown">
@@ -566,129 +173,78 @@
     </div>
   </div>
 
-  <!-- SCHEDULE -->
   <section class="schedule-section" id="schedule">
     <div class="container">
       <span class="section-label">The Celebration</span>
       <h2 class="section-title">Three Days in Ronda</h2>
       <div class="section-divider"></div>
-
       <div class="schedule-grid">
         <div class="schedule-card">
           <p class="schedule-day">Day One · Friday</p>
           <p class="schedule-date">28th May 2027</p>
           <p class="schedule-event">Pre-Wedding Drinks &amp; Tapas</p>
-          <p class="schedule-desc">
-            Join us for an informal evening of drinks and tapas as we welcome you to Ronda. 
-            A relaxed gathering to reconnect with old friends and make new ones before the big day.
-            <br><br><em>Venue to be confirmed — watch this space.</em>
-          </p>
+          <p class="schedule-desc">Join us for an informal evening of drinks and tapas as we welcome you to Ronda. A relaxed gathering to reconnect with old friends and make new ones before the big day.<br><br><em>Venue to be confirmed — watch this space.</em></p>
           <span class="schedule-icon">🍷</span>
         </div>
-
         <div class="schedule-card">
           <p class="schedule-day">Day Two · Saturday</p>
           <p class="schedule-date">29th May 2027</p>
           <p class="schedule-event">The Wedding</p>
-          <p class="schedule-desc">
-            The main event! Join us to celebrate our marriage in the stunning setting of Ronda, 
-            one of Spain's most beautiful white hilltop towns. 
-            Full details — ceremony time, dress code and directions — coming soon.
-            <br><br><em>Venue: Finca La Marabulla, Ronda.</em>
-          </p>
+          <p class="schedule-desc">The main event! Join us to celebrate our marriage in the stunning setting of Ronda, one of Spain's most beautiful white hilltop towns. Full details — ceremony time, dress code and directions — coming soon.<br><br><em>Venue: Finca La Marabulla, Ronda.</em></p>
           <span class="schedule-icon">💍</span>
         </div>
-
         <div class="schedule-card">
           <p class="schedule-day">Day Three · Sunday</p>
           <p class="schedule-date">30th May 2027</p>
           <p class="schedule-event">Paella &amp; Pool Party</p>
-          <p class="schedule-desc">
-            Wind down with us the morning after — a laid-back paella lunch and pool party 
-            in the sunshine at Finca La Marabulla. Come hungry, bring your swimwear, 
-            and let's make the most of the Andalusian sun.
-            <br><br><em>Venue: Finca La Marabulla, Ronda.</em>
-          </p>
+          <p class="schedule-desc">Wind down with us the morning after — a laid-back paella lunch and pool party in the sunshine at Finca La Marabulla. Come hungry, bring your swimwear, and let's make the most of the Andalusian sun.<br><br><em>Venue: Finca La Marabulla, Ronda.</em></p>
           <span class="schedule-icon">🌊</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section id="gallery">
     <div class="container">
       <span class="section-label">Jerome &amp; Enrique</span>
       <h2 class="section-title">Our Story in Pictures</h2>
       <div class="section-divider"></div>
-
       <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="./photos/pier.jpg" alt="Jerome and Enrique on the pier" width="800" height="600" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="./photos/howthengagement.jpg" alt="Engagement at Howth" width="400" height="300" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="./photos/fierra.jpg" alt="Jerome and Enrique in Frigiliana" width="400" height="300" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="./photos/utah.jpg" alt="Jerome and Enrique in Utah" width="400" height="300" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="./photos/nerja.jpg" alt="Jerome and Enrique in Nerja" width="400" height="300" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="./photos/aranislands.jpg" alt="Jerome and Enrique at the Aran Islands" width="400" height="300" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="./photos/ski.jpg" alt="Jerome and Enrique skiing" width="400" height="300" loading="lazy">
-        </div>
-      </div></div>
+        <div class="gallery-item"><img src="./photos/pier.jpg" alt="Jerome and Enrique on the pier" width="800" height="600" loading="lazy"></div>
+        <div class="gallery-item"><img src="./photos/howthengagement.jpg" alt="Engagement at Howth" width="400" height="300" loading="lazy"></div>
+        <div class="gallery-item"><img src="./photos/fierra.jpg" alt="Jerome and Enrique in Frigiliana" width="400" height="300" loading="lazy"></div>
+        <div class="gallery-item"><img src="./photos/utah.jpg" alt="Jerome and Enrique in Utah" width="400" height="300" loading="lazy"></div>
+        <div class="gallery-item"><img src="./photos/nerja.jpg" alt="Jerome and Enrique in Nerja" width="400" height="300" loading="lazy"></div>
+        <div class="gallery-item"><img src="./photos/aranislands.jpg" alt="Jerome and Enrique at the Aran Islands" width="400" height="300" loading="lazy"></div>
+        <div class="gallery-item"><img src="./photos/ski.jpg" alt="Jerome and Enrique skiing" width="400" height="300" loading="lazy"></div>
+      </div>
+    </div>
   </section>
 
-  <!-- VENUE -->
   <section class="venue-section" id="venue">
     <div class="container">
       <span class="section-label">Where</span>
       <h2 class="section-title">Finca La Marabulla</h2>
       <div class="section-divider"></div>
-
       <div class="venue-grid">
-        <div class="venue-image">
-          <img src="./photos/ronda.jpg" alt="Ronda gorge and bridge" width="600" height="450" loading="lazy">
-        </div>
+        <div class="venue-image"><img src="./photos/ronda.jpg" alt="Ronda gorge and bridge" width="600" height="450" loading="lazy"></div>
         <div class="venue-details">
           <h3>Ronda, Málaga, Andalucía</h3>
-          <p>
-            Perched in the hills of the Serranía de Ronda, Finca La Marabulla is a stunning 
-            private estate surrounded by olive groves and sweeping Andalusian countryside. 
-            It will be our home for the wedding ceremony, dinner, and the next morning's pool party.
-          </p>
-          <p>
-            Ronda itself is one of Spain's most dramatic towns — a white hilltop city 
-            spanning a deep gorge, with views that have inspired travellers for centuries. 
-            We can't wait to share it with you.
-          </p>
-          <a href="https://lamarabulla.com/" target="_blank" rel="noopener noreferrer" class="venue-link">
-            Visit La Marabulla website →
-          </a>
+          <p>Perched in the hills of the Serranía de Ronda, Finca La Marabulla is a stunning private estate surrounded by olive groves and sweeping Andalusian countryside. It will be our home for the wedding ceremony, dinner, and the next morning's pool party.</p>
+          <p>Ronda itself is one of Spain's most dramatic towns — a white hilltop city spanning a deep gorge, with views that have inspired travellers for centuries. We can't wait to share it with you.</p>
+          <a href="https://lamarabulla.com/" target="_blank" rel="noopener noreferrer" class="venue-link">Visit La Marabulla website →</a>
           <br><br>
-          <a href="https://maps.google.com/?q=Ronda,Malaga,Spain" target="_blank" rel="noopener noreferrer" class="venue-link">
-            View Ronda on Google Maps →
-          </a>
+          <a href="https://maps.google.com/?q=Ronda,Malaga,Spain" target="_blank" rel="noopener noreferrer" class="venue-link">View Ronda on Google Maps →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRAVEL -->
   <section id="travel">
     <div class="container">
       <span class="section-label">Getting Here</span>
       <h2 class="section-title">Travel &amp; Stay</h2>
       <div class="section-divider"></div>
-
       <div class="travel-grid">
         <div class="travel-card">
           <div class="travel-card-icon">✈️</div>
@@ -703,7 +259,7 @@
         <div class="travel-card">
           <div class="travel-card-icon">🚆</div>
           <h3>By Train</h3>
-          <p>Ronda has a train station with direct services from Málaga (2.5 hrs) and connections from Madrid (via Algeciras). A scenic and relaxed way to arrive.</p>
+          <p>Ronda has a train station with direct services from Málaga (2.5 hrs) and connections from Madrid. A scenic and relaxed way to arrive.</p>
         </div>
         <div class="travel-card">
           <div class="travel-card-icon">🏨</div>
@@ -714,64 +270,27 @@
     </div>
   </section>
 
-      <!-- RSVP -->
   <section class="rsvp-section" id="rsvp">
     <div class="container-narrow">
       <span class="section-label">Please Respond</span>
       <h2 class="section-title">RSVP</h2>
       <div class="section-divider"></div>
-      <p style="color: oklch(0.85 0.02 60 / 0.65); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+      <p style="color: rgba(220,200,160,0.65); font-size: var(--text-sm); margin-bottom: var(--space-4); max-width: 48ch; margin-inline: auto;">
         Kindly respond by <strong style="color: var(--color-gold-light)">1st February 2027</strong>
       </p>
-
-      <!-- Hidden iframe receives the Google Form submission silently -->
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
-      <form class="rsvp-form" id="rsvpForm"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSd53hvM3xQCjq7PJfdrpsiTHdNIIsadtvLxn-qkzBDTGp0rew/formResponse"
-        method="POST"
-        target="hidden_iframe">
-
-        <div class="rsvp-row">
-          <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="entry.1498135098" placeholder="Your first name" required>
-          </div>
-          <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="entry.891277820" placeholder="Your last name" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="entry.127759367" placeholder="your@email.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="attending">Will you be attending?</label>
-          <select id="attending" name="entry.877086558" required>
-            <option value="" disabled selected>Please select…</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="dietary">Dietary or Mobility Requirements</label>
-          <textarea id="dietary" name="entry.2606285" rows="3" placeholder="Any dietary requirements, mobility needs, or a message for the couple…"></textarea>
-        </div>
-
-        <button type="submit" class="rsvp-btn">Send RSVP</button>
-      </form>
-
-      <div class="rsvp-success" id="rsvpSuccess">
-        Thank you! We can't wait to celebrate with you in Ronda. 🥂
-      </div>
+      <p style="color: rgba(220,200,160,0.5); font-size: var(--text-sm); margin-bottom: var(--space-10); max-width: 48ch; margin-inline: auto; line-height: 1.7;">
+        Please let us know if you'll be joining us in Ronda by clicking the button below. The form takes less than a minute to fill in.
+      </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd53hvM3xQCjq7PJfdrpsiTHdNIIsadtvLxn-qkzBDTGp0rew/viewform"
+         target="_blank" rel="noopener noreferrer" class="rsvp-btn">
+        RSVP Now
+      </a>
+      <p style="color: rgba(220,200,160,0.3); font-size: var(--text-xs); margin-top: var(--space-6); letter-spacing: 0.05em;">
+        Opens a short secure form — takes less than 1 minute
+      </p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p class="footer-names">Jerome &amp; Enrique</p>
     <p class="footer-date">28 – 30 May 2027 · Ronda, Málaga, Spain</p>
@@ -780,29 +299,20 @@
   </footer>
 
   <script>
-    // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => navLinks.classList.remove('open')); });
 
-    // Countdown to 29 May 2027
     function updateCountdown() {
       const target = new Date('2027-05-29T12:00:00');
       const now = new Date();
       const diff = target - now;
-      if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = '<p style="color:#fdf8f2;font-family:var(--font-display);font-style:italic;font-size:var(--text-xl)">Today is the day! 🎉</p>';
-        return;
-      }
-      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+      if (diff <= 0) { document.getElementById('countdown').innerHTML = '<p style="color:#fdf8f2;font-family:var(--font-display);font-style:italic;font-size:var(--text-xl)">Today is the day! 🎉</p>'; return; }
+      const days  = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const mins  = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const secs  = Math.floor((diff % (1000*60)) / 1000);
       document.getElementById('cd-days').textContent  = String(days).padStart(3,'0');
       document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
       document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
@@ -811,37 +321,11 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // RSVP — submits to Google Forms silently via hidden iframe
-    document.getElementById('rsvpForm').addEventListener('submit', function() {
-      var form = this;
-      setTimeout(function() {
-        form.style.display = 'none';
-        document.getElementById('rsvpSuccess').style.display = 'block';
-      }, 800);
-    });
-
-    hiddenIframe.addEventListener('load', function() {
-      if (submitted) {
-        rsvpForm.reset();
-      }
-    });
-
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.schedule-card, .travel-card, .gallery-item, .venue-grid, .venue-details');
+    const reveals = document.querySelectorAll('.schedule-card, .travel-card, .gallery-item, .venue-grid');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } });
     }, { threshold: 0.1 });
-    reveals.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
+    reveals.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; observer.observe(el); });
   </script>
 </body>
 </html>
