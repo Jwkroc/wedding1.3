@@ -67,9 +67,7 @@
       text-transform: uppercase; color: var(--color-text-muted);
       transition: background var(--transition), color var(--transition);
     }
-    .lang-toggle button.active {
-      background: var(--color-primary); color: #fff;
-    }
+    .lang-toggle button.active { background: var(--color-primary); color: #fff; }
     .lang-toggle button:not(.active):hover { background: var(--color-surface-2); }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: var(--space-2); }
     .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--color-text); border-radius: 2px; }
@@ -164,6 +162,7 @@
       <div class="lang-toggle" role="group" aria-label="Language selector">
         <button id="btn-en" class="active" onclick="setLanguage('en')">EN</button>
         <button id="btn-es" onclick="setLanguage('es')">ES</button>
+        <button id="btn-ga" onclick="setLanguage('ga')">GA</button>
       </div>
       <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -433,6 +432,62 @@
         'rsvp-note': 'Abre un breve formulario seguro — tarda menos de 1 minuto',
         'footer-date': '28 – 30 de mayo de 2027 · Ronda, Málaga, España',
         'footer-note': 'Hecho con amor · ¿Preguntas? Contáctanos directamente.',
+      },
+      ga: {
+        'nav-schedule': 'Clár',
+        'nav-gallery': 'Gailearaí',
+        'nav-venue': 'Ionad',
+        'nav-travel': 'Taisteal',
+        'hero-eyebrow': 'Táimid ag pósadh',
+        'hero-date': '28 – 30 Bealtaine 2027 \u00a0·\u00a0 Ronda, Málaga, An Spáinn',
+        'hero-cta': 'Freagair Anois',
+        'hero-scroll': 'Scrollaigh',
+        'countdown-label': 'Laethanta go dtí an bhainis',
+        'cd-days': 'Laethanta',
+        'cd-hours': 'Uaireanta',
+        'cd-mins': 'Nóiméid',
+        'cd-secs': 'Soicindí',
+        'schedule-label': 'An Ceiliúradh',
+        'schedule-title': 'Trí Lá i Ronda',
+        'day1-day': 'Lá a hAon · Aoine',
+        'day1-date': '28 Bealtaine 2027',
+        'day1-event': 'Deochanna & Tapas Réamh-Bhainis',
+        'day1-desc': 'Bígí linn le haghaidh tráthnóna neamhfhoirmiúil deochanna agus tapas agus sinn ag fáiltiú romhaibh go Ronda. Cruinniú suaimhneach chun athcheangal a dhéanamh le seanchairde agus cairde nua a dhéanamh roimh an lá mór.<br><br><em>Ionad le deimhniú — coinnígí súil air seo.</em>',
+        'day2-day': 'Lá a Dó · Satharn',
+        'day2-date': '29 Bealtaine 2027',
+        'day2-event': 'An Bhainis',
+        'day2-desc': "An príomheachtra! Bígí linn chun ár bpósadh a cheiliúradh i suíomh iontach Ronda, ceann de bhailte bána is áille na Spáinne ar mhullach cnoic. Sonraí iomlána — am na searmanas, cód éadaigh agus treoracha — ag teacht go luath.<br><br><em>Ionad: Finca La Marabulla, Ronda.</em>",
+        'day3-day': 'Lá a Trí · Domhnach',
+        'day3-date': '30 Bealtaine 2027',
+        'day3-event': 'Paella & Cóisir Linn Snámha',
+        'day3-desc': "Scíth a ligean linn ar maidin ina dhiaidh — lón paella socair agus cóisir linn snámha faoi ghrian Finca La Marabulla. Tagaigí ocrach, tugaigí bhur gcultacha snámha libh, agus bainfimis lánúsáid as grian na hAndalúise.<br><br><em>Ionad: Finca La Marabulla, Ronda.</em>",
+        'gallery-label': 'Jerome agus Enrique',
+        'gallery-title': 'Ár Scéal i bPictiúir',
+        'venue-label': 'Cá háit',
+        'venue-title': 'Finca La Marabulla',
+        'venue-subtitle': 'Ronda, Málaga, Andalúis',
+        'venue-p1': "Suite ar chnoic Serranía de Ronda, is eastát príobháideach iontach é Finca La Marabulla atá timpeallaithe ag gáirdíní ológ agus tírdhreach leathan Andalúiseach. Beidh sé mar bhaile againn don searmanas pósta, don dinnéar, agus don chóisir linn snámha ar maidin lá arna mhárach.",
+        'venue-p2': "Is ceann de bhailte is drámatúla na Spáinne í Ronda féin — cathair bhán ar mhullach cnoic os cionn scarbhealach domhain, le radharcanna a spreag taistealaithe le céadta bliain. Táimid ar bís é a roinnt libh.",
+        'venue-link1': 'Tabhair cuairt ar shuíomh La Marabulla →',
+        'venue-link2': 'Féach ar Ronda ar Google Maps →',
+        'travel-label': 'Ag Teacht Anseo',
+        'travel-title': 'Taisteal & Lóistín',
+        'travel-air-title': 'Ar Eitleán',
+        'travel-air-desc': 'Is iad na haerfoirt idirnáisiúnta is gaire ná <strong>Málaga</strong> agus <strong>Sevilla</strong>. Tá eitiltí díreacha chuig an dá cheann ó Bhaile Átha Cliath, Corcaigh agus ar fud na hEorpa. Má tá tú ag teacht ó lasmuigh den Eoraip, is é Málaga an rogha is gaire duit le haghaidh naisc trasatlantacha. Is féidir leat freisin eitilt go Maidrid, Barcelona nó Faro (An Phortaingéil) más mian leat saoire níos faide a dhéanamh.',
+        'travel-car-title': 'Ar Carr',
+        'travel-car-desc': 'Tá Ronda ceangailte go maith ar bhóthar. Ó aerfort Málaga, glac an A-357 siar, ansin an A-367 ó dheas go Ronda — thart ar 1.5 uair an chloig. Tá carranna ar cíos ar fáil ag gach aerfort in aice láimhe.',
+        'travel-train-title': 'Ar Thraein',
+        'travel-train-desc': 'Tá stáisiún traenach ag Ronda le seirbhísí díreacha ó Málaga (2.5 u.c.) agus naisc ó Mhaidrid. Bealach radharc breá agus suaimhneach le teacht.',
+        'travel-stay-title': 'Cá háit le Fanacht',
+        'travel-stay-desc': 'Tá réimse leathan lóistín ag Ronda — ó óstáin boutique sa sean-chathair go fincaí tuaithe sna cnoic máguaird. Molaimid áirithint luath a dhéanamh mar is tréimhse choitianta í Bealtaine. Tuilleadh sonraí le teacht.',
+        'rsvp-label': 'Le do Thoil Freagair',
+        'rsvp-deadline-prefix': 'Freagair roimh',
+        'rsvp-deadline-date': '1 Feabhra 2027',
+        'rsvp-desc': "Inis dúinn le do thoil an mbeidh tú ag teacht linn go Ronda trí chliceáil ar an gcnaipe thíos. Ní thógann an fhoirm ach níos lú ná nóiméad.",
+        'rsvp-btn': 'Freagair Anois',
+        'rsvp-note': 'Osclaíonn foirm ghearr shlán — níos lú ná 1 nóiméad',
+        'footer-date': '28 – 30 Bealtaine 2027 · Ronda, Málaga, An Spáinn',
+        'footer-note': 'Déanta le grá · Ceisteanna? Déan teagmháil linn go díreach.',
       }
     };
 
@@ -452,6 +507,7 @@
 
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-ga').classList.toggle('active', lang === 'ga');
     }
 
     // Apply saved language on load
@@ -469,8 +525,12 @@
       const now = new Date();
       const diff = target - now;
       if (diff <= 0) {
-        const msg = currentLang === 'es' ? '¡Hoy es el gran día! 🎉' : 'Today is the day! 🎉';
-        document.getElementById('countdown').innerHTML = `<p style="color:#fdf8f2;font-family:var(--font-display);font-style:italic;font-size:var(--text-xl)">${msg}</p>`;
+        const msgs = {
+          en: 'Today is the day! 🎉',
+          es: '¡Hoy es el gran día! 🎉',
+          ga: 'Inniu an lá mór! 🎉'
+        };
+        document.getElementById('countdown').innerHTML = `<p style="color:#fdf8f2;font-family:var(--font-display);font-style:italic;font-size:var(--text-xl)">${msgs[currentLang] || msgs.en}</p>`;
         return;
       }
       const days  = Math.floor(diff / (1000*60*60*24));
@@ -488,9 +548,19 @@
     // ─── Scroll reveals ──────────────────────────────────────────────────────
     const reveals = document.querySelectorAll('.schedule-card, .travel-card, .gallery-item, .venue-grid');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
     }, { threshold: 0.1 });
-    reveals.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; observer.observe(el); });
+    reveals.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
   </script>
 </body>
 </html>
