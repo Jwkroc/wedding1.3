@@ -516,7 +516,6 @@
       .gallery-item:first-child { grid-column: span 1; }
     }
   </style>
-  <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
 
@@ -715,26 +714,59 @@
     </div>
   </section>
 
-  <!-- RSVP -->
+      <!-- RSVP -->
   <section class="rsvp-section" id="rsvp">
     <div class="container-narrow">
       <span class="section-label">Please Respond</span>
       <h2 class="section-title">RSVP</h2>
       <div class="section-divider"></div>
-      <p style="color: oklch(0.85 0.02 60 / 0.65); font-size: var(--text-sm); margin-bottom: var(--space-8);">
+      <p style="color: oklch(0.85 0.02 60 / 0.65); font-size: var(--text-sm); margin-bottom: var(--space-2);">
         Kindly respond by <strong style="color: var(--color-gold-light)">1st February 2027</strong>
       </p>
-      <div style="width:100%; border-radius: var(--radius-lg); overflow:hidden;">
-        <iframe data-tally-src="https://tally.so/embed/44PpGk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy"
-          width="100%"
-          height="500"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Wedding RSVP"
-          style="background: transparent; border: none;">
-        </iframe>
+
+      <!-- Hidden iframe receives the Google Form submission silently -->
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+      <form class="rsvp-form" id="rsvpForm"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSd53hvM3xQCjq7PJfdrpsiTHdNIIsadtvLxn-qkzBDTGp0rew/formResponse"
+        method="POST"
+        target="hidden_iframe">
+
+        <div class="rsvp-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="entry.1498135098" placeholder="Your first name" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="entry.891277820" placeholder="Your last name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="entry.127759367" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="attending">Will you be attending?</label>
+          <select id="attending" name="entry.877086558" required>
+            <option value="" disabled selected>Please select…</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dietary">Dietary or Mobility Requirements</label>
+          <textarea id="dietary" name="entry.2606285" rows="3" placeholder="Any dietary requirements, mobility needs, or a message for the couple…"></textarea>
+        </div>
+
+        <button type="submit" class="rsvp-btn">Send RSVP</button>
+      </form>
+
+      <div class="rsvp-success" id="rsvpSuccess">
+        Thank you! We can't wait to celebrate with you in Ronda. 🥂
       </div>
     </div>
   </section>
@@ -779,11 +811,19 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // RSVP form (static — shows success message)
-    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.style.display = 'none';
-      document.getElementById('rsvpSuccess').style.display = 'block';
+    // RSVP — submits to Google Forms silently via hidden iframe
+    document.getElementById('rsvpForm').addEventListener('submit', function() {
+      var form = this;
+      setTimeout(function() {
+        form.style.display = 'none';
+        document.getElementById('rsvpSuccess').style.display = 'block';
+      }, 800);
+    });
+
+    hiddenIframe.addEventListener('load', function() {
+      if (submitted) {
+        rsvpForm.reset();
+      }
     });
 
     // Scroll reveal
