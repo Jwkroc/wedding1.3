@@ -516,6 +516,7 @@
       .gallery-item:first-child { grid-column: span 1; }
     }
   </style>
+  <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
 
@@ -720,52 +721,20 @@
       <span class="section-label">Please Respond</span>
       <h2 class="section-title">RSVP</h2>
       <div class="section-divider"></div>
-      <p style="color: oklch(0.85 0.02 60 / 0.65); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+      <p style="color: oklch(0.85 0.02 60 / 0.65); font-size: var(--text-sm); margin-bottom: var(--space-8);">
         Kindly respond by <strong style="color: var(--color-gold-light)">1st February 2027</strong>
       </p>
-
-      <form class="rsvp-form" id="rsvpForm">
-        <div class="rsvp-row">
-          <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Your first name" required>
-          </div>
-          <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Your last name" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-group">
-          <label for="attending">Will you be attending?</label>
-          <select id="attending" name="attending" required>
-            <option value="" disabled selected>Please select…</option>
-            <option value="yes-all">Yes — all three days!</option>
-            <option value="yes-wedding">Yes — wedding day only (29th)</option>
-            <option value="yes-some">Yes — some days (please specify below)</option>
-            <option value="no">Sadly unable to attend</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="guests">Number of guests (including yourself)</label>
-          <select id="guests" name="guests">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="dietary">Dietary requirements or notes</label>
-          <textarea id="dietary" name="dietary" rows="3" placeholder="Any dietary requirements, accessibility needs, or message for the couple…"></textarea>
-        </div>
-        <button type="submit" class="rsvp-btn">Send RSVP</button>
-      </form>
-      <div class="rsvp-success" id="rsvpSuccess">
-        Thank you! We can't wait to celebrate with you in Ronda. 🥂
+      <div style="width:100%; border-radius: var(--radius-lg); overflow:hidden;">
+        <iframe data-tally-src="https://tally.so/embed/44PpGk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="500"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Wedding RSVP"
+          style="background: transparent; border: none;">
+        </iframe>
       </div>
     </div>
   </section>
