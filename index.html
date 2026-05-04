@@ -244,7 +244,20 @@
   <div class="nav-backdrop" id="navBackdrop"></div>
 
   <nav>
-    <div class="nav-logo">J <span style="color:var(--color-gold)">♥</span> E</div>
+    <div class="nav-logo" style="display:flex; align-items:center; gap:10px;">
+  <span style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:400; color:var(--color-primary);">J</span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100" aria-label="Claddagh symbol">
+    <!-- Left hand -->
+    <path d="M28,42 C20,39 12,43 12,52 C12,60 20,65 28,63" fill="none" stroke="#c49a3c" stroke-width="5" stroke-linecap="round"/>
+    <!-- Right hand -->
+    <path d="M72,42 C80,39 88,43 88,52 C88,60 80,65 72,63" fill="none" stroke="#c49a3c" stroke-width="5" stroke-linecap="round"/>
+    <!-- Filled gold heart -->
+    <path d="M50,73 C50,73 27,56 27,41 a12,12 0 0,1 23,0 a12,12 0 0,1 23,0 C73,56 50,73 50,73z" fill="#c49a3c"/>
+    <!-- Crown -->
+    <polyline points="36,29 36,19 43,24 50,15 57,24 64,19 64,29" fill="none" stroke="#c49a3c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:400; color:var(--color-primary);">E</span>
+</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#schedule" data-i18n="nav-schedule">Schedule</a></li>
       <li><a href="#gallery" data-i18n="nav-gallery">Gallery</a></li>
