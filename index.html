@@ -6,7 +6,7 @@
   <title>Jerome & Enrique — Ronda, Spain 2027</title>
   <meta name="description" content="Join us to celebrate the wedding of Jerome Wholihane & Enrique Marenco Jimenez in beautiful Ronda, Málaga, Spain — 28–30 May 2027." />
   <meta property="og:title" content="Jerome & Enrique — Ronda 2027" />
-  <meta property="og:description" content="Three days of celebration in Ronda, Málaga, Spain." />
+  <meta property="og:description" content="Two days of celebration in Ronda, Málaga, Spain." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -237,9 +237,71 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item:first-child { grid-column: span 1; }
     }
+
+    /* ── Password Gate ── */
+    #password-gate {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--color-bg);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; text-align: center;
+      padding: var(--space-8);
+    }
+    #password-gate .gate-logo {
+      font-family: var(--font-display); font-style: italic;
+      font-size: var(--text-2xl); font-weight: 300;
+      color: var(--color-primary); margin-bottom: var(--space-3);
+    }
+    #password-gate .gate-sub {
+      font-size: var(--text-sm); letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-text-muted); margin-bottom: var(--space-10);
+    }
+    #password-gate .gate-label {
+      font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--color-gold); font-weight: 500; margin-bottom: var(--space-3);
+    }
+    #password-gate input[type="password"] {
+      width: 100%; max-width: 320px;
+      padding: var(--space-3) var(--space-6);
+      border: 1px solid var(--color-border); border-radius: var(--radius-full);
+      background: var(--color-surface); color: var(--color-text);
+      font-family: var(--font-body); font-size: var(--text-base);
+      text-align: center; letter-spacing: 0.1em;
+      outline: none; transition: border-color var(--transition);
+      margin-bottom: var(--space-4);
+    }
+    #password-gate input[type="password"]:focus { border-color: var(--color-gold); }
+    #password-gate .gate-btn {
+      padding: var(--space-3) var(--space-10);
+      background: var(--color-primary); color: #fdf8f2;
+      font-family: var(--font-body); font-size: var(--text-sm);
+      font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+      border-radius: var(--radius-full); border: none; cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      display: block; width: 100%; max-width: 320px;
+    }
+    #password-gate .gate-btn:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
+    #password-gate .gate-error {
+      color: var(--color-primary); font-size: var(--text-xs);
+      letter-spacing: 0.05em; margin-top: var(--space-3);
+      min-height: 1.2em;
+    }
+    #password-gate .gate-divider { width: 40px; height: 1px; background: var(--color-gold); margin: var(--space-6) auto; }
   </style>
 </head>
 <body>
+
+  <!-- Password Gate -->
+  <div id="password-gate">
+    <p class="gate-label">Private — Guests Only</p>
+    <div class="gate-logo">Jerome &amp; Enrique</div>
+    <p class="gate-sub">Ronda, Andalucía · May 2027</p>
+    <div class="gate-divider"></div>
+    <p class="gate-label">Enter Password</p>
+    <input type="password" id="gate-input" placeholder="••••••••" autocomplete="off" />
+    <button class="gate-btn" id="gate-btn">Enter</button>
+    <p class="gate-error" id="gate-error"></p>
+  </div>
+
 
   <div class="nav-backdrop" id="navBackdrop"></div>
 
@@ -284,7 +346,7 @@
     <div class="hero-content">
       <span class="hero-eyebrow" data-i18n="hero-eyebrow">We're getting married</span>
       <h1 class="hero-names">Jerome<br><span class="hero-ampersand">&amp;</span><br>Enrique</h1>
-      <p class="hero-date" data-i18n="hero-date">28 – 30 May 2027 &nbsp;·&nbsp; Ronda, Málaga, Spain</p>
+      <p class="hero-date" data-i18n="hero-date">28 – 29 May 2027 &nbsp;·&nbsp; Ronda, Málaga, Spain</p>
       <p class="hero-location">Ronda, Andalucía</p>
       <a href="#rsvp" class="hero-cta" data-i18n="hero-cta">RSVP Now</a>
     </div>
@@ -304,7 +366,7 @@
   <section class="schedule-section" id="schedule">
     <div class="container">
       <span class="section-label" data-i18n="schedule-label">The Celebration</span>
-      <h2 class="section-title" data-i18n="schedule-title">Three Days in Ronda</h2>
+      <h2 class="section-title" data-i18n="schedule-title">Two Days in Ronda</h2>
       <div class="section-divider"></div>
       <div class="schedule-grid">
         <div class="schedule-card">
@@ -321,14 +383,7 @@
           <p class="schedule-desc" data-i18n="day2-desc">The big day! Join us to celebrate our marriage at Finca La Marabulla with its stunning views of Ronda and its famous bridge. We are still finalising the running order for the day but we will begin around 13:00 and the party will continue into the not so small hours of Sunday. We will share details about transportation to and from the Finca and dress code closer to the time.<br><br><em>Venue: Finca La Marabulla, Ronda.</em></p>
           <span class="schedule-icon">💍</span>
         </div>
-        <div class="schedule-card">
-          <p class="schedule-day" data-i18n="day3-day">Day Three · Sunday</p>
-          <p class="schedule-date" data-i18n="day3-date">30th May 2027</p>
-          <p class="schedule-event" data-i18n="day3-event">Relaxed Pool Party</p>
-          <p class="schedule-desc" data-i18n="day3-desc">Wind down with us the afternoon after the big night. We will be having a laid back BBQ and pool party in the sunshine at Finca La Marabulla. This will be a very informal affair so bring your swimwear and let's make the most of the Andalusian sun.<br><br><em>Venue: Finca La Marabulla, Ronda.</em></p>
-          <span class="schedule-icon">🌊</span>
         </div>
-      </div>
     </div>
   </section>
 
@@ -358,7 +413,7 @@
         <div class="venue-image"><img src="./photos/ronda.jpg" alt="Ronda gorge and bridge" width="600" height="450" loading="lazy"></div>
         <div class="venue-details">
           <h3 data-i18n="venue-subtitle">Ronda, Málaga, Andalucía</h3>
-          <p data-i18n="venue-p1">Perched in the hills of the Sierra de las Nieves, Finca La Marabulla is a beautifully restored old Spanish farmhouse surrounded by olive groves and the sweeping Andalusian countryside. It will be our home for the wedding ceremony, dinner, and the Sunday pool party.</p>
+          <p data-i18n="venue-p1">Perched in the hills of the Sierra de las Nieves, Finca La Marabulla is a beautifully restored old Spanish farmhouse surrounded by olive groves and the sweeping Andalusian countryside. It will be our home for the wedding ceremony and dinner.</p>
           <p data-i18n="venue-p2">Ronda itself is one of Spain's most dramatic towns with its famous white houses and bridge spanning el Tajo, with views that have inspired writers and travellers for centuries. We can't wait to share it with you.</p>
           <a href="https://lamarabulla.com/" target="_blank" rel="noopener noreferrer" class="venue-link" data-i18n="venue-link1">Visit La Marabulla website →</a>
           <br><br>
@@ -432,7 +487,7 @@
 
   <footer>
     <p class="footer-names">Jerome &amp; Enrique</p>
-    <p class="footer-date" data-i18n="footer-date">28 – 30 May 2027 · Ronda, Málaga, Spain</p>
+    <p class="footer-date" data-i18n="footer-date">28 – 29 May 2027 · Ronda, Málaga, Spain</p>
     <div class="footer-divider"></div>
     <p class="footer-note" data-i18n="footer-note">Questions? Reach out to us directly.</p>
   </footer>
@@ -443,20 +498,18 @@
       en: {
         'nav-schedule': 'Schedule', 'nav-gallery': 'Gallery', 'nav-venue': 'Venue', 'nav-travel': 'Travel', 'nav-gifts': 'Gifts',
         'hero-eyebrow': "We're getting married",
-        'hero-date': '28 – 30 May 2027 \u00a0·\u00a0 Ronda, Málaga, Spain',
+        'hero-date': '28 – 29 May 2027 \u00a0·\u00a0 Ronda, Málaga, Spain',
         'hero-cta': 'RSVP Now', 'hero-scroll': 'Scroll',
         'countdown-label': 'Days until the wedding',
         'cd-days': 'Days', 'cd-hours': 'Hours', 'cd-mins': 'Minutes', 'cd-secs': 'Seconds',
-        'schedule-label': 'The Celebration', 'schedule-title': 'Three Days in Ronda',
+        'schedule-label': 'The Celebration', 'schedule-title': 'Two Days in Ronda',
         'day1-day': 'Day One · Friday', 'day1-date': '28th May 2027', 'day1-event': 'Pre-Wedding Drinks & Tapas',
         'day1-desc': 'Join us for the classic Spanish pre-boda tradition of an evening of informal drinks and tapas as we welcome you to Ronda. A relaxed get together for us all to reconnect and get ready for the big day.<br><br><em>Venue to be confirmed — watch this space.</em>',
         'day2-day': 'Day Two · Saturday', 'day2-date': '29th May 2027', 'day2-event': 'The Wedding',
         'day2-desc': "The big day! Join us to celebrate our marriage at Finca La Marabulla with its stunning views of Ronda and its famous bridge. We are still finalising the running order for the day but we will begin around 13:00 and the party will continue into the not so small hours of Sunday. We will share details about transportation to and from the Finca and dress code closer to the time.<br><br><em>Venue: Finca La Marabulla, Ronda.</em>",
-        'day3-day': 'Day Three · Sunday', 'day3-date': '30th May 2027', 'day3-event': 'Relaxed Pool Party',
-        'day3-desc': "Wind down with us the afternoon after the big night. We will be having a laid back BBQ and pool party in the sunshine at Finca La Marabulla. This will be a very informal affair so bring your swimwear and let's make the most of the Andalusian sun.<br><br><em>Venue: Finca La Marabulla, Ronda.</em>",
-        'gallery-label': 'Jerome & Enrique', 'gallery-title': 'Our Story in Pictures',
+'gallery-label': 'Jerome & Enrique', 'gallery-title': 'Our Story in Pictures',
         'venue-label': 'Where', 'venue-title': 'Finca La Marabulla', 'venue-subtitle': 'Ronda, Málaga, Andalucía',
-        'venue-p1': "Perched in the hills of the Sierra de las Nieves, Finca La Marabulla is a beautifully restored old Spanish farmhouse surrounded by olive groves and the sweeping Andalusian countryside. It will be our home for the wedding ceremony, dinner, and the Sunday pool party.",
+        'venue-p1': "Perched in the hills of the Sierra de las Nieves, Finca La Marabulla is a beautifully restored old Spanish farmhouse surrounded by olive groves and the sweeping Andalusian countryside. It will be our home for the wedding ceremony and dinner.",
         'venue-p2': "Ronda itself is one of Spain's most dramatic towns with its famous white houses and bridge spanning el Tajo, with views that have inspired writers and travellers for centuries. We can't wait to share it with you.",
         'venue-link1': 'Visit La Marabulla website →', 'venue-link2': 'View Ronda on Google Maps →',
         'travel-label': 'Getting Here', 'travel-title': 'Travel & Stay',
@@ -472,26 +525,24 @@
         'rsvp-deadline-date': 'as soon as possible',
         'rsvp-desc': "Please let us know if you'll be joining us in Ronda by clicking the button below. The form takes less than a minute to fill in.",
         'rsvp-btn': 'RSVP Now', 'rsvp-note': 'Opens a short secure form — takes less than 1 minute',
-        'footer-date': '28 – 30 May 2027 · Ronda, Málaga, Spain',
+        'footer-date': '28 – 29 May 2027 · Ronda, Málaga, Spain',
         'footer-note': 'Questions? Reach out to us directly.',
       },
       es: {
         'nav-schedule': 'Programa', 'nav-gallery': 'Galería', 'nav-venue': 'Lugar', 'nav-travel': 'Viaje', 'nav-gifts': 'Regalos',
         'hero-eyebrow': 'Nos casamos',
-        'hero-date': '28 – 30 de mayo de 2027 \u00a0·\u00a0 Ronda, Málaga, España',
+        'hero-date': '28 – 29 de mayo de 2027 \u00a0·\u00a0 Ronda, Málaga, España',
         'hero-cta': 'Confirmar asistencia', 'hero-scroll': 'Desplazar',
         'countdown-label': 'Días para la boda',
         'cd-days': 'Días', 'cd-hours': 'Horas', 'cd-mins': 'Minutos', 'cd-secs': 'Segundos',
-        'schedule-label': 'La Celebración', 'schedule-title': 'Tres Días en Ronda',
+        'schedule-label': 'La Celebración', 'schedule-title': 'Dos Días en Ronda',
         'day1-day': 'Día Uno · Viernes', 'day1-date': '28 de mayo de 2027', 'day1-event': 'Cócteles y Tapas Pre-Boda',
         'day1-desc': 'Únete a nosotros para la clásica tradición española de la pre-boda: una velada de copas y tapas informales mientras te damos la bienvenida a Ronda. Una reunión relajada para que todos nos reconectemos y nos preparemos para el gran día.<br><br><em>Lugar por confirmar — ¡estate atento!</em>',
         'day2-day': 'Día Dos · Sábado', 'day2-date': '29 de mayo de 2027', 'day2-event': 'La Boda',
         'day2-desc': '¡El gran día! Únete a nosotros para celebrar nuestra boda en la Finca La Marabulla con sus impresionantes vistas de Ronda y su famoso puente. Aún estamos ultimando el orden del día, pero empezaremos hacia las 13:00 y la fiesta continuará hasta las no tan pequeñas horas del domingo. Compartiremos los detalles sobre el transporte hacia y desde la Finca y el código de vestimenta cuando se acerque la fecha.<br><br><em>Lugar: Finca La Marabulla, Ronda.</em>',
-        'day3-day': 'Día Tres · Domingo', 'day3-date': '30 de mayo de 2027', 'day3-event': 'Fiesta Relajada en la Piscina',
-        'day3-desc': 'Relájate con nosotros la tarde después de la gran noche. Tendremos una BBQ informal y fiesta en la piscina bajo el sol de la Finca La Marabulla. Será algo muy informal, así que trae tu bañador y disfrutemos al máximo del sol andaluz.<br><br><em>Lugar: Finca La Marabulla, Ronda.</em>',
-        'gallery-label': 'Jerome y Enrique', 'gallery-title': 'Nuestra Historia en Imágenes',
+'gallery-label': 'Jerome y Enrique', 'gallery-title': 'Nuestra Historia en Imágenes',
         'venue-label': 'Dónde', 'venue-title': 'Finca La Marabulla', 'venue-subtitle': 'Ronda, Málaga, Andalucía',
-        'venue-p1': 'Enclavada en las colinas de la Sierra de las Nieves, Finca La Marabulla es una antigua masía española bellamente restaurada, rodeada de olivares y el vasto campo andaluz. Será nuestro hogar para la ceremonia nupcial, la cena y la fiesta en la piscina del domingo.',
+        'venue-p1': 'Enclavada en las colinas de la Sierra de las Nieves, Finca La Marabulla es una antigua masía española bellamente restaurada, rodeada de olivares y el vasto campo andaluz. Será nuestro hogar para la ceremonia nupcial y la cena.',
         'venue-p2': 'Ronda es uno de los pueblos más impresionantes de España, con sus famosas casas blancas y el puente que cruza el Tajo, con vistas que han inspirado a escritores y viajeros durante siglos. Estamos deseando compartirla contigo.',
         'venue-link1': 'Visitar la web de La Marabulla →', 'venue-link2': 'Ver Ronda en Google Maps →',
         'travel-label': 'Cómo Llegar', 'travel-title': 'Viaje y Alojamiento',
@@ -507,26 +558,24 @@
         'rsvp-deadline-date': 'lo antes posible',
         'rsvp-desc': 'Por favor, dinos si nos acompañarás en Ronda haciendo clic en el botón de abajo. El formulario tarda menos de un minuto en completarse.',
         'rsvp-btn': 'Confirmar Asistencia', 'rsvp-note': 'Abre un breve formulario seguro — tarda menos de 1 minuto',
-        'footer-date': '28 – 30 de mayo de 2027 · Ronda, Málaga, España',
+        'footer-date': '28 – 29 de mayo de 2027 · Ronda, Málaga, España',
         'footer-note': '¿Preguntas? Contáctanos directamente.',
       },
       ga: {
         'nav-schedule': 'Clár', 'nav-gallery': 'Gailearaí', 'nav-venue': 'Ionad', 'nav-travel': 'Taisteal', 'nav-gifts': 'Bronntanais',
         'hero-eyebrow': 'Táimid ag pósadh',
-        'hero-date': '28 – 30 Bealtaine 2027 \u00a0·\u00a0 Ronda, Málaga, An Spáinn',
+        'hero-date': '28 – 29 Bealtaine 2027 \u00a0·\u00a0 Ronda, Málaga, An Spáinn',
         'hero-cta': 'Freagair Anois', 'hero-scroll': 'Scrollaigh',
         'countdown-label': 'Laethanta go dtí an bhainis',
         'cd-days': 'Laethanta', 'cd-hours': 'Uaireanta', 'cd-mins': 'Nóiméid', 'cd-secs': 'Soicindí',
-        'schedule-label': 'An Ceiliúradh', 'schedule-title': 'Trí Lá i Ronda',
+        'schedule-label': 'An Ceiliúradh', 'schedule-title': 'Dhá Lá i Ronda',
         'day1-day': 'Lá a hAon · Aoine', 'day1-date': '28 Bealtaine 2027', 'day1-event': 'Deochanna & Tapas Réamh-Bhainis',
         'day1-desc': 'Bí linn le haghaidh traidisiún clasúil Spáinneach na pre-boda — tráthnóna deochanna agus tapas neamhfhoirmiúla agus sinn ag fáiltiú romhat go Ronda. Cruinniú suaimhneach dúinn go léir chun athcheangal a dhéanamh agus ullmhú don lá mór.<br><br><em>Ionad le deimhniú — coinnigh súil air seo.</em>',
         'day2-day': 'Lá a Dó · Satharn', 'day2-date': '29 Bealtaine 2027', 'day2-event': 'An Bhainis',
         'day2-desc': "An lá mór! Bí linn chun ár bpósadh a cheiliúradh ag Finca La Marabulla le radharcanna iontacha ar Ronda agus a droichead cáiliúil. Táimid fós ag críochnú ord an lae ach tosóimid timpeall 13:00 agus leanfaidh an chóisir go dtí uaireanta beaga an Domhnaigh. Roinneoimid sonraí faoi iompar chuig an Finca agus ón Finca agus faoin gcód éadaigh níos gaire don am.<br><br><em>Ionad: Finca La Marabulla, Ronda.</em>",
-        'day3-day': 'Lá a Trí · Domhnach', 'day3-date': '30 Bealtaine 2027', 'day3-event': 'Cóisir Linn Snámha Suaimhneach',
-        'day3-desc': "Lig do scíth linn tráthnóna tar éis na hoíche móire. Beidh BBQ neamhfhoirmiúil agus cóisir linn snámha againn faoi ghrian Finca La Marabulla. Beidh sé an-neamhfhoirmiúil ar fad, mar sin tabhair do chulaith snámha leat agus bainfimis lánúsáid as grian na hAndalúise.<br><br><em>Ionad: Finca La Marabulla, Ronda.</em>",
-        'gallery-label': 'Jerome agus Enrique', 'gallery-title': 'Ár Scéal i bPictiúir',
+'gallery-label': 'Jerome agus Enrique', 'gallery-title': 'Ár Scéal i bPictiúir',
         'venue-label': 'Cá háit', 'venue-title': 'Finca La Marabulla', 'venue-subtitle': 'Ronda, Málaga, Andalúis',
-        'venue-p1': "Suite ar chnoic Sierra de las Nieves, is seanbhfeirm Spáinneach go hálainn athchóirithe é Finca La Marabulla atá timpeallaithe ag gáirdíní ológ agus tírdhreach leathan Andalúiseach. Beidh sé mar bhaile againn don searmanas pósta, don dinnéar, agus don chóisir linn snámha Dé Domhnaigh.",
+        'venue-p1': "Suite ar chnoic Sierra de las Nieves, is seanbhfeirm Spáinneach go hálainn athchóirithe é Finca La Marabulla atá timpeallaithe ag gáirdíní ológ agus tírdhreach leathan Andalúiseach. Beidh sé mar bhaile againn don searmanas pósta agus don dinnéar.",
         'venue-p2': "Is ceann de bhailte is drámatúla na Spáinne í Ronda féin, lena tithe bána cáiliúla agus a droichead os cionn an Tajo, le radharcanna a spreag scríbhneoirí agus taistealaithe le céadta bliain. Táimid ar bís é a roinnt leat.",
         'venue-link1': 'Tabhair cuairt ar shuíomh La Marabulla →', 'venue-link2': 'Féach ar Ronda ar Google Maps →',
         'travel-label': 'Ag Teacht Anseo', 'travel-title': 'Taisteal & Lóistín',
@@ -542,7 +591,7 @@
         'rsvp-deadline-date': 'chomh luath agus is féidir',
         'rsvp-desc': "Inis dúinn le do thoil an mbeidh tú ag teacht linn go Ronda trí chliceáil ar an gcnaipe thíos. Ní thógann an fhoirm ach níos lú ná nóiméad.",
         'rsvp-btn': 'Freagair Anois', 'rsvp-note': 'Osclaíonn foirm ghearr shlán — níos lú ná 1 nóiméad',
-        'footer-date': '28 – 30 Bealtaine 2027 · Ronda, Málaga, An Spáinn',
+        'footer-date': '28 – 29 Bealtaine 2027 · Ronda, Málaga, An Spáinn',
         'footer-note': 'Ceisteanna? Déan teagmháil linn go díreach.',
       }
     };
@@ -623,6 +672,40 @@
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
     });
+  </script>
+  <script>
+
+    // ─── Password Gate ────────────────────────────────────────────────────────
+    (function() {
+      const PASS = 'emjw27';
+      const KEY  = 'wedding-access';
+      const gate   = document.getElementById('password-gate');
+      const input  = document.getElementById('gate-input');
+      const btn    = document.getElementById('gate-btn');
+      const errMsg = document.getElementById('gate-error');
+
+      function unlock() {
+        gate.style.transition = 'opacity 0.5s ease';
+        gate.style.opacity = '0';
+        setTimeout(() => { gate.style.display = 'none'; }, 500);
+      }
+
+      if (sessionStorage.getItem(KEY) === '1') { unlock(); }
+
+      function attempt() {
+        if (input.value === PASS) {
+          sessionStorage.setItem(KEY, '1');
+          unlock();
+        } else {
+          errMsg.textContent = 'Incorrect password. Please try again.';
+          input.value = '';
+          input.focus();
+        }
+      }
+
+      btn.addEventListener('click', attempt);
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') attempt(); });
+    })();
   </script>
 </body>
 </html>
