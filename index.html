@@ -187,42 +187,19 @@
     @media (max-width: 768px) {
       nav { padding: var(--space-4) var(--space-4); }
       .nav-links {
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-        position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        height: 100dvh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: var(--space-8);
-        background: var(--color-bg);
-        z-index: 200;
-        list-style: none;
+        visibility: hidden; opacity: 0; pointer-events: none;
+        position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: var(--space-8); background: var(--color-bg); z-index: 200; list-style: none;
         transition: opacity 0.35s ease, visibility 0.35s ease;
       }
-      .nav-links.open {
-        visibility: visible;
-        opacity: 1;
-        pointer-events: all;
-      }
+      .nav-links.open { visibility: visible; opacity: 1; pointer-events: all; }
       .nav-links a {
-        font-size: var(--text-lg);
-        letter-spacing: 0.12em;
-        color: var(--color-text);
-        padding: var(--space-3) var(--space-6);
-        border-bottom: 1px solid transparent;
-        transition: color var(--transition), border-color var(--transition);
-        text-align: center;
+        font-size: var(--text-lg); letter-spacing: 0.12em; color: var(--color-text);
+        padding: var(--space-3) var(--space-6); border-bottom: 1px solid transparent;
+        transition: color var(--transition), border-color var(--transition); text-align: center;
       }
-      .nav-links a:hover {
-        color: var(--color-primary);
-        border-bottom-color: var(--color-gold);
-      }
+      .nav-links a:hover { color: var(--color-primary); border-bottom-color: var(--color-gold); }
       .nav-hamburger { display: flex; }
       .venue-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
@@ -301,19 +278,15 @@
 
   <nav>
     <div class="nav-logo" style="display:flex; align-items:center; gap:4px;">
-  <span style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:400; color:var(--color-primary);">J</span>
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100" aria-label="Claddagh symbol">
-    <!-- Left hand -->
-    <path d="M28,42 C20,39 12,43 12,52 C12,60 20,65 28,63" fill="none" stroke="#c49a3c" stroke-width="5" stroke-linecap="round"/>
-    <!-- Right hand -->
-    <path d="M72,42 C80,39 88,43 88,52 C88,60 80,65 72,63" fill="none" stroke="#c49a3c" stroke-width="5" stroke-linecap="round"/>
-    <!-- Filled gold heart -->
-    <path d="M50,73 C50,73 27,56 27,41 a12,12 0 0,1 23,0 a12,12 0 0,1 23,0 C73,56 50,73 50,73z" fill="#c49a3c"/>
-    <!-- Crown -->
-    <polyline points="36,29 36,19 43,24 50,15 57,24 64,19 64,29" fill="none" stroke="#c49a3c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  <span style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:400; color:var(--color-primary);">E</span>
-</div>
+      <span style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:400; color:var(--color-primary);">J</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100" aria-label="Claddagh symbol">
+        <path d="M28,42 C20,39 12,43 12,52 C12,60 20,65 28,63" fill="none" stroke="#c49a3c" stroke-width="5" stroke-linecap="round"/>
+        <path d="M72,42 C80,39 88,43 88,52 C88,60 80,65 72,63" fill="none" stroke="#c49a3c" stroke-width="5" stroke-linecap="round"/>
+        <path d="M50,73 C50,73 27,56 27,41 a12,12 0 0,1 23,0 a12,12 0 0,1 23,0 C73,56 50,73 50,73z" fill="#c49a3c"/>
+        <polyline points="36,29 36,19 43,24 50,15 57,24 64,19 64,29" fill="none" stroke="#c49a3c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:400; color:var(--color-primary);">E</span>
+    </div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#schedule" data-i18n="nav-schedule">Schedule</a></li>
       <li><a href="#gallery" data-i18n="nav-gallery">Gallery</a></li>
@@ -381,7 +354,7 @@
           <p class="schedule-event" data-i18n="day3-event">After Party</p>
           <p class="schedule-desc" data-i18n="day3-desc">As I am sure you know there is nothing Jerome &amp; Enrique love more than an early morning Sunday Mass so get ready to wash away the sins of the night before.<br><br>On a serious note we will be organising something very informal to wrap up the celebrations and say our goodbyes. Think beers, chill music and some Andalucian sunshine. We will let you know closer to day what the plan is.</p>
         </div>
-        </div>
+      </div>
     </div>
   </section>
 
@@ -488,6 +461,40 @@
   </footer>
 
   <script>
+    // ─── Password Gate ────────────────────────────────────────────────────────
+    (function () {
+      const CORRECT = 'emjw27';
+      const STORAGE_KEY = 'jw_wedding_auth';
+
+      const gate     = document.getElementById('password-gate');
+      const input    = document.getElementById('gate-input');
+      const btn      = document.getElementById('gate-btn');
+      const errorMsg = document.getElementById('gate-error');
+
+      if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+        gate.style.display = 'none';
+        return;
+      }
+
+      function attempt() {
+        if (input.value.trim() === CORRECT) {
+          sessionStorage.setItem(STORAGE_KEY, '1');
+          gate.style.transition = 'opacity 0.5s ease';
+          gate.style.opacity = '0';
+          setTimeout(() => gate.style.display = 'none', 500);
+        } else {
+          errorMsg.textContent = 'Incorrect password. Please try again.';
+          input.value = '';
+          input.focus();
+        }
+      }
+
+      btn.addEventListener('click', attempt);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') attempt();
+      });
+    })();
+
     // ─── Translations ─────────────────────────────────────────────────────────
     const translations = {
       en: {
@@ -521,7 +528,7 @@
         'rsvp-label': 'Please Respond', 'rsvp-deadline-prefix': 'Kindly respond',
         'rsvp-deadline-date': 'as soon as possible',
         'rsvp-desc': "Please let us know if you'll be joining us in Ronda by clicking the button below. The form takes less than a minute to fill in.",
-        'rsvp-btn': 'RSVP Now', 'rsvp-note': '',
+        'rsvp-btn': 'RSVP Now',
         'footer-date': '28 – 30 May 2027 · Ronda, Málaga, Spain',
         'footer-note': 'Questions? Reach out to us directly.',
       },
@@ -543,4 +550,115 @@
         'venue-label': 'Dónde', 'venue-title': 'Finca La Marabulla', 'venue-subtitle': 'Ronda, Málaga, Andalucía',
         'venue-p1': 'Enclavada en las colinas de la Sierra de las Nieves, Finca La Marabulla es una antigua masía española bellamente restaurada, rodeada de olivares y el vasto campo andaluz. Será nuestro hogar para la ceremonia nupcial y la cena.',
         'venue-p2': 'Ronda es uno de los pueblos más impresionantes de España, con sus famosas casas blancas y el puente que cruza el Tajo, con vistas que han inspirado a escritores y viajeros durante siglos. Estamos deseando compartirla contigo.',
-        'venue-link1': 'Visitar la web de La 
+        'venue-link1': 'Visitar la web de La Marabulla →', 'venue-link2': 'Ver Ronda en Google Maps →',
+        'travel-label': 'Cómo Llegar', 'travel-title': 'Viaje y Alojamiento',
+        'travel-air-title': 'En Avión',
+        'travel-air-desc': 'Los aeropuertos internacionales más cercanos están en <strong>Málaga</strong> y <strong>Sevilla</strong>. Hay vuelos directos desde Dublín, Cork y toda Europa.',
+        'travel-car-title': 'En Coche',
+        'travel-car-desc': 'Ronda está a aproximadamente 110 km (1h 20min) del aeropuerto de Málaga y 140 km de Sevilla (2h) en coche.',
+        'travel-train-title': 'En Tren',
+        'travel-train-desc': 'Ronda tiene estación de tren con servicios directos desde Málaga (2,5 h) y conexiones desde Madrid.',
+        'travel-stay-title': 'Dónde Alojarse',
+        'travel-stay-desc': 'Ronda ofrece una amplia gama de alojamientos, desde hoteles boutique hasta villas. Como Ronda no tiene muchos taxis, recomendamos alojarse en el centro, desde donde organizaremos el transporte a la Finca el día de la boda.',
+        'rsvp-label': 'Confirma tu Asistencia', 'rsvp-deadline-prefix': 'Por favor, responde',
+        'rsvp-deadline-date': 'cuanto antes',
+        'rsvp-desc': 'Haznos saber si nos acompañarás en Ronda haciendo clic en el botón de abajo. El formulario se completa en menos de un minuto.',
+        'rsvp-btn': 'Confirmar Asistencia',
+        'footer-date': '28 – 30 de mayo de 2027 · Ronda, Málaga, España',
+        'footer-note': '¿Preguntas? Contáctanos directamente.',
+      },
+      ga: {
+        'nav-schedule': 'Clár', 'nav-gallery': 'Gailearaí', 'nav-venue': 'Ionad', 'nav-travel': 'Taisteal', 'nav-gifts': 'Bronntanais',
+        'hero-eyebrow': 'Táimid ag pósadh',
+        'hero-date': '28 – 30 Bealtaine 2027 \u00a0·\u00a0 Ronda, Málaga, An Spáinn',
+        'hero-cta': 'RSVP Anois', 'hero-scroll': 'Scrollaigh',
+        'countdown-label': 'Laethanta go dtí an bhainis',
+        'cd-days': 'Laethanta', 'cd-hours': 'Uaireanta', 'cd-mins': 'Nóiméid', 'cd-secs': 'Soicindí',
+        'schedule-label': 'An Ceiliúradh', 'schedule-title': 'Trí Lá i Ronda',
+        'day1-day': 'Lá a hAon · Dé hAoine', 'day1-date': '28 Bealtaine 2027', 'day1-event': 'Deochanna & Tapas Réamh-Bhainis',
+        'day1-desc': 'Bígí linn le haghaidh traidisiún na Spáinne: oíche neamhfhoirmiúil deochanna agus tapas agus sibh á fháiltiú go Ronda.<br><br><em>Ionad le dearbhú.</em>',
+        'day2-day': 'Lá a Dó · Dé Sathairn', 'day2-date': '29 Bealtaine 2027', 'day2-event': 'An Bhainis',
+        'day2-desc': 'An lá mór! Bígí linn ag Finca La Marabulla le hamharcanna iontacha ar Ronda agus a droichead cáiliúil. Tosóimid timpeall 13:00 agus leanfaidh an chóisir go dtí na luathchéanna maidin Dé Domhnaigh.<br><br><em>Ionad: Finca La Marabulla, Ronda.</em>',
+        'day3-day': 'Lá a Trí · Dé Domhnaigh', 'day3-date': '30 Bealtaine 2027', 'day3-event': 'Cóisir Iar-Bhainis',
+        'day3-desc': 'Mar is eol daoibh, níl aon rud is fearr le Jerome agus Enrique ná Aifreann moch ar maidin Dé Domhnaigh!<br><br>Ar ndóigh, eagróimid rud éigin neamhfhoirmiúil le deireadh a chur leis na ceiliúrtha. Smaoinigh ar bheoir, ceol bog agus grian Andalúise.',
+        'gallery-label': 'Jerome agus Enrique', 'gallery-title': 'Ár Scéal i bPictiúir',
+        'venue-label': 'Cá háit', 'venue-title': 'Finca La Marabulla', 'venue-subtitle': 'Ronda, Málaga, Andalúis',
+        'venue-p1': 'Suite i gcnoic Sierra de las Nieves, is feirm ársa Spáinneach go hálainn athchóirithe í Finca La Marabulla, timpeallaithe ag garraithe ológa. Is anseo a bheidh an searmanas agus an dinnéar.',
+        'venue-p2': "Is é Ronda ceann de bhailte is drámatiúla na Spáinne lena thithe bána cáiliúla agus an droichead os cionn El Tajo. Táimid ag tnúth go mór lena roinnt libh.",
+        'venue-link1': 'Tabhair cuairt ar shuíomh La Marabulla →', 'venue-link2': 'Féach ar Ronda ar Google Maps →',
+        'travel-label': 'Ag Teacht', 'travel-title': 'Taisteal & Lóistín',
+        'travel-air-title': 'Ar Eitleán',
+        'travel-air-desc': 'Is iad <strong>Málaga</strong> agus <strong>Sevilla</strong> na haerfoirt idirnáisiúnta is gaire. Tá eitiltí díreacha ó Bhaile Átha Cliath agus Corcaigh.',
+        'travel-car-title': 'Ar Charr',
+        'travel-car-desc': 'Tá Ronda thart ar 110 km (1u 20n) ó aerfort Málaga agus 140 km ó Sevilla.',
+        'travel-train-title': 'Ar Thraein',
+        'travel-train-desc': 'Tá stáisiún traenach ag Ronda le seirbhísí díreacha ó Málaga (2.5 u) agus naisc ó Mhaidrid.',
+        'travel-stay-title': 'Cá gCónaí',
+        'travel-stay-desc': 'Tá réimse leathan lóistín ag Ronda. Molaimid fanacht sa bhaile féin mar níl mórán tacsaithe ann — eagróimid iompar ón lár go dtí an Finca.',
+        'rsvp-label': 'Freagair Le Do Thoil', 'rsvp-deadline-prefix': 'Freagair',
+        'rsvp-deadline-date': 'chomh luath agus is féidir',
+        'rsvp-desc': 'Inis dúinn an mbeidh tú linn i Ronda trí chliceáil ar an gcnaipe thíos.',
+        'rsvp-btn': 'RSVP Anois',
+        'footer-date': '28 – 30 Bealtaine 2027 · Ronda, Málaga, An Spáinn',
+        'footer-note': 'Ceisteanna? Déan teagmháil linn go díreach.',
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key] !== undefined) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-ga').classList.toggle('active', lang === 'ga');
+    }
+
+    // ─── Countdown ────────────────────────────────────────────────────────────
+    function updateCountdown() {
+      const wedding = new Date('2027-05-29T13:00:00');
+      const now = new Date();
+      const diff = wedding - now;
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent = '0';
+        document.getElementById('cd-hours').textContent = '0';
+        document.getElementById('cd-mins').textContent = '0';
+        document.getElementById('cd-secs').textContent = '0';
+        return;
+      }
+      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('cd-days').textContent  = days;
+      document.getElementById('cd-hours').textContent = hours;
+      document.getElementById('cd-mins').textContent  = mins;
+      document.getElementById('cd-secs').textContent  = secs;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ─── Mobile Nav ───────────────────────────────────────────────────────────
+    const hamburger   = document.getElementById('hamburger');
+    const navLinks    = document.getElementById('navLinks');
+    const navBackdrop = document.getElementById('navBackdrop');
+
+    function toggleMenu(open) {
+      hamburger.classList.toggle('open', open);
+      navLinks.classList.toggle('open', open);
+      navBackdrop.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', () => toggleMenu(!hamburger.classList.contains('open')));
+    navBackdrop.addEventListener('click', () => toggleMenu(false));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+  </script>
+</body>
+</html>
