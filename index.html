@@ -186,8 +186,6 @@
     /* ── Mobile ── */
     @media (max-width: 768px) {
       nav { padding: var(--space-4) var(--space-4); }
-
-      /* Hide desktop nav links by default on mobile */
       .nav-links {
         visibility: hidden;
         opacity: 0;
@@ -225,9 +223,7 @@
         color: var(--color-primary);
         border-bottom-color: var(--color-gold);
       }
-
       .nav-hamburger { display: flex; }
-
       .venue-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item:first-child { grid-column: span 2; }
@@ -301,7 +297,6 @@
     <p class="gate-error" id="gate-error"></p>
   </div>
 
-
   <div class="nav-backdrop" id="navBackdrop"></div>
 
   <nav>
@@ -372,23 +367,19 @@
           <p class="schedule-day" data-i18n="day1-day">Day One · Friday</p>
           <p class="schedule-date" data-i18n="day1-date">28th May 2027</p>
           <p class="schedule-event" data-i18n="day1-event">Pre-Wedding Drinks &amp; Tapas</p>
-          <p class="schedule-desc" data-i18n="day1-desc">Join us for the classic Spanish pre-boda tradition of an evening of informal drinks and tapas as we welcome you to Ronda. A relaxed get together for us all to reconnect and get ready for the big day.<br><br><em>Venue to be confirmed — watch this space.</em></p>
-          <span class="schedule-icon">🍷</span>
+          <p class="schedule-desc" data-i18n="day1-desc">Join us for the classic Spanish pre-boda tradition of an evening of informal drinks and tapas as we welcome you to Ronda. A relaxed get together for us all to reconnect and get ready for the big day.<br><br><em>Venue to be confirmed.</em></p>
         </div>
         <div class="schedule-card">
           <p class="schedule-day" data-i18n="day2-day">Day Two · Saturday</p>
           <p class="schedule-date" data-i18n="day2-date">29th May 2027</p>
           <p class="schedule-event" data-i18n="day2-event">The Wedding</p>
           <p class="schedule-desc" data-i18n="day2-desc">The big day! Join us to celebrate our marriage at Finca La Marabulla with its stunning views of Ronda and its famous bridge. We are still finalising the running order for the day but we will begin around 13:00 and the party will continue into the not so small hours of Sunday. We will share details about transportation to and from the Finca and dress code closer to the time.<br><br><em>Venue: Finca La Marabulla, Ronda.</em></p>
-          <span class="schedule-icon">💍</span>
         </div>
-
         <div class="schedule-card">
           <p class="schedule-day" data-i18n="day3-day">Day Three · Sunday</p>
           <p class="schedule-date" data-i18n="day3-date">30th May 2027</p>
-          <p class="schedule-event" data-i18n="day3-event">Farewell Brunch</p>
-          <p class="schedule-desc" data-i18n="day3-desc">Join us for a relaxed farewell brunch as we wrap up the celebrations and say our goodbyes. A casual morning to savour the last of the Andalusian sun together before heading home with wonderful memories.<br><br><em>Venue to be confirmed — watch this space.</em></p>
-          <span class="schedule-icon">☀️</span>
+          <p class="schedule-event" data-i18n="day3-event">After Party</p>
+          <p class="schedule-desc" data-i18n="day3-desc">As I am sure you know there is nothing Jerome &amp; Enrique love more than an early morning Sunday Mass so get ready to wash away the sins of the night before.<br><br>On a serious note we will be organising something very informal to wrap up the celebrations and say our goodbyes. Think beers, chill music and some Andalucian sunshine. We will let you know closer to day what the plan is.</p>
         </div>
         </div>
     </div>
@@ -477,7 +468,7 @@
       <h2 class="section-title">RSVP</h2>
       <div class="section-divider"></div>
       <p style="color: rgba(220,200,160,0.65); font-size: var(--text-sm); margin-bottom: var(--space-4); max-width: 48ch; margin-inline: auto;">
-        <span data-i18n="rsvp-deadline-prefix">Kindly respond by</span> <strong style="color: var(--color-gold-light)" data-i18n="rsvp-deadline-date">as soon as possible</strong>
+        <span data-i18n="rsvp-deadline-prefix">Kindly respond</span> <strong style="color: var(--color-gold-light)" data-i18n="rsvp-deadline-date">as soon as possible</strong>
       </p>
       <p style="color: rgba(220,200,160,0.5); font-size: var(--text-sm); margin-bottom: var(--space-10); max-width: 48ch; margin-inline: auto; line-height: 1.7;" data-i18n="rsvp-desc">
         Please let us know if you'll be joining us in Ronda by clicking the button below. The form takes less than a minute to fill in.
@@ -486,9 +477,6 @@
          target="_blank" rel="noopener noreferrer" class="rsvp-btn" data-i18n="rsvp-btn">
         RSVP Now
       </a>
-      <p style="color: rgba(220,200,160,0.3); font-size: var(--text-xs); margin-top: var(--space-6); letter-spacing: 0.05em;" data-i18n="rsvp-note">
-        Opens a short secure form — takes less than 1 minute
-      </p>
     </div>
   </section>
 
@@ -511,11 +499,11 @@
         'cd-days': 'Days', 'cd-hours': 'Hours', 'cd-mins': 'Minutes', 'cd-secs': 'Seconds',
         'schedule-label': 'The Celebration', 'schedule-title': 'Three Days in Ronda',
         'day1-day': 'Day One · Friday', 'day1-date': '28th May 2027', 'day1-event': 'Pre-Wedding Drinks & Tapas',
-        'day1-desc': 'Join us for the classic Spanish pre-boda tradition of an evening of informal drinks and tapas as we welcome you to Ronda. A relaxed get together for us all to reconnect and get ready for the big day.<br><br><em>Venue to be confirmed — watch this space.</em>',
+        'day1-desc': 'Join us for the classic Spanish pre-boda tradition of an evening of informal drinks and tapas as we welcome you to Ronda. A relaxed get together for us all to reconnect and get ready for the big day.<br><br><em>Venue to be confirmed.</em>',
         'day2-day': 'Day Two · Saturday', 'day2-date': '29th May 2027', 'day2-event': 'The Wedding',
         'day2-desc': "The big day! Join us to celebrate our marriage at Finca La Marabulla with its stunning views of Ronda and its famous bridge. We are still finalising the running order for the day but we will begin around 13:00 and the party will continue into the not so small hours of Sunday. We will share details about transportation to and from the Finca and dress code closer to the time.<br><br><em>Venue: Finca La Marabulla, Ronda.</em>",
-        'day3-day': 'Day Three · Sunday', 'day3-date': '30th May 2027', 'day3-event': 'Farewell Brunch',
-        'day3-desc': 'Join us for a relaxed farewell brunch as we wrap up the celebrations and say our goodbyes. A casual morning to savour the last of the Andalusian sun together before heading home with wonderful memories.<br><br><em>Venue to be confirmed — watch this space.</em>',
+        'day3-day': 'Day Three · Sunday', 'day3-date': '30th May 2027', 'day3-event': 'After Party',
+        'day3-desc': 'As I am sure you know there is nothing Jerome & Enrique love more than an early morning Sunday Mass so get ready to wash away the sins of the night before.<br><br>On a serious note we will be organising something very informal to wrap up the celebrations and say our goodbyes. Think beers, chill music and some Andalucian sunshine. We will let you know closer to day what the plan is.',
         'gallery-label': 'Jerome & Enrique', 'gallery-title': 'Our Story in Pictures',
         'venue-label': 'Where', 'venue-title': 'Finca La Marabulla', 'venue-subtitle': 'Ronda, Málaga, Andalucía',
         'venue-p1': "Perched in the hills of the Sierra de las Nieves, Finca La Marabulla is a beautifully restored old Spanish farmhouse surrounded by olive groves and the sweeping Andalusian countryside. It will be our home for the wedding ceremony and dinner.",
@@ -530,10 +518,10 @@
         'travel-train-desc': 'Ronda has a train station with direct services from Málaga (2.5 hrs) and connections from Madrid. A scenic and relaxed way to arrive.',
         'travel-stay-title': 'Where to Stay',
         'travel-stay-desc': 'Ronda has a wide range of accommodation, from boutique hotels to Villas. As Ronda does not have a lot of taxis we advise that you stay in the town itself, we will arrange transportation from the town centre to the Finca on the day of the wedding. We recommend booking early as May is a popular time.',
-        'rsvp-label': 'Please Respond', 'rsvp-deadline-prefix': 'Kindly respond by',
+        'rsvp-label': 'Please Respond', 'rsvp-deadline-prefix': 'Kindly respond',
         'rsvp-deadline-date': 'as soon as possible',
         'rsvp-desc': "Please let us know if you'll be joining us in Ronda by clicking the button below. The form takes less than a minute to fill in.",
-        'rsvp-btn': 'RSVP Now', 'rsvp-note': 'Opens a short secure form — takes less than 1 minute',
+        'rsvp-btn': 'RSVP Now', 'rsvp-note': '',
         'footer-date': '28 – 30 May 2027 · Ronda, Málaga, Spain',
         'footer-note': 'Questions? Reach out to us directly.',
       },
@@ -546,179 +534,13 @@
         'cd-days': 'Días', 'cd-hours': 'Horas', 'cd-mins': 'Minutos', 'cd-secs': 'Segundos',
         'schedule-label': 'La Celebración', 'schedule-title': 'Tres Días en Ronda',
         'day1-day': 'Día Uno · Viernes', 'day1-date': '28 de mayo de 2027', 'day1-event': 'Cócteles y Tapas Pre-Boda',
-        'day1-desc': 'Únete a nosotros para la clásica tradición española de la pre-boda: una velada de copas y tapas informales mientras te damos la bienvenida a Ronda. Una reunión relajada para que todos nos reconectemos y nos preparemos para el gran día.<br><br><em>Lugar por confirmar — ¡estate atento!</em>',
+        'day1-desc': 'Únete a nosotros para la clásica tradición española de la pre-boda: una velada de copas y tapas informales mientras te damos la bienvenida a Ronda. Una reunión relajada para que todos nos reconectemos y nos preparemos para el gran día.<br><br><em>Lugar por confirmar.</em>',
         'day2-day': 'Día Dos · Sábado', 'day2-date': '29 de mayo de 2027', 'day2-event': 'La Boda',
         'day2-desc': '¡El gran día! Únete a nosotros para celebrar nuestra boda en la Finca La Marabulla con sus impresionantes vistas de Ronda y su famoso puente. Aún estamos ultimando el orden del día, pero empezaremos hacia las 13:00 y la fiesta continuará hasta las no tan pequeñas horas del domingo. Compartiremos los detalles sobre el transporte hacia y desde la Finca y el código de vestimenta cuando se acerque la fecha.<br><br><em>Lugar: Finca La Marabulla, Ronda.</em>',
-        'day3-day': 'Día Tres · Domingo', 'day3-date': '30 de mayo de 2027', 'day3-event': 'Brunch de Despedida',
-        'day3-desc': 'Únete a nosotros para un relajado brunch de despedida mientras cerramos las celebraciones y nos decimos adiós. Una mañana tranquila para saborear juntos el último sol andaluz antes de volver a casa con recuerdos maravillosos.<br><br><em>Lugar por confirmar — ¡estate atento!</em>',
+        'day3-day': 'Día Tres · Domingo', 'day3-date': '30 de mayo de 2027', 'day3-event': 'After Party',
+        'day3-desc': 'Como bien sabéis, no hay nada que Jerome y Enrique disfruten más que una Misa dominical a primera hora de la mañana, así que preparaos para redimiros de los pecados de la noche anterior.<br><br>En serio, organizaremos algo muy informal para cerrar las celebraciones y despedirnos. Piensa en cervezas, música tranquila y sol andaluz. Os contaremos el plan cuando se acerque el día.',
         'gallery-label': 'Jerome y Enrique', 'gallery-title': 'Nuestra Historia en Imágenes',
         'venue-label': 'Dónde', 'venue-title': 'Finca La Marabulla', 'venue-subtitle': 'Ronda, Málaga, Andalucía',
         'venue-p1': 'Enclavada en las colinas de la Sierra de las Nieves, Finca La Marabulla es una antigua masía española bellamente restaurada, rodeada de olivares y el vasto campo andaluz. Será nuestro hogar para la ceremonia nupcial y la cena.',
         'venue-p2': 'Ronda es uno de los pueblos más impresionantes de España, con sus famosas casas blancas y el puente que cruza el Tajo, con vistas que han inspirado a escritores y viajeros durante siglos. Estamos deseando compartirla contigo.',
-        'venue-link1': 'Visitar la web de La Marabulla →', 'venue-link2': 'Ver Ronda en Google Maps →',
-        'travel-label': 'Cómo Llegar', 'travel-title': 'Viaje y Alojamiento',
-        'travel-air-title': 'En Avión',
-        'travel-air-desc': 'Los aeropuertos internacionales más cercanos están en <strong>Málaga</strong> y <strong>Sevilla</strong>. Hay vuelos directos a ambos desde Dublín, Cork y toda Europa. Si vienes de fuera de Europa, Málaga es tu opción más cercana para conexiones transatlánticas. También puedes volar a Madrid, Barcelona o Faro (Portugal) si quieres aprovechar para hacer unas vacaciones más largas.',
-        'travel-car-title': 'En Coche',
-        'travel-car-desc': 'Ronda está a unos 110 km (1h 20min) del aeropuerto de Málaga y a 140 km de Sevilla (2h) en coche. Hay coches de alquiler disponibles en todos los aeropuertos cercanos.',
-        'travel-train-title': 'En Tren',
-        'travel-train-desc': 'Ronda cuenta con estación de tren con servicios directos desde Málaga (2,5 h) y conexiones desde Madrid. Una forma panorámica y relajada de llegar.',
-        'travel-stay-title': 'Dónde Alojarse',
-        'travel-stay-desc': 'Ronda ofrece una amplia gama de alojamientos, desde hoteles boutique hasta villas. Como Ronda no tiene muchos taxis, te aconsejamos que te alojes en el propio pueblo; organizaremos el transporte desde el centro hasta la Finca el día de la boda. Recomendamos reservar con antelación ya que mayo es una época muy solicitada.',
-        'gifts-title': 'Una Nota sobre los Regalos', 'gifts-desc': 'Queremos daros las gracias a todos por hacer el esfuerzo de compartir con nosotros lo que estamos seguros será un día fantástico. Vuestra presencia es el mejor regalo y no esperamos ningún obsequio. Si deseas hacernos un regalo, pronto compartiremos los datos de nuestra cuenta bancaria conjunta.', 'rsvp-label': 'Por Favor Confirma', 'rsvp-deadline-prefix': 'Por favor responde antes del',
-        'rsvp-deadline-date': 'lo antes posible',
-        'rsvp-desc': 'Por favor, dinos si nos acompañarás en Ronda haciendo clic en el botón de abajo. El formulario tarda menos de un minuto en completarse.',
-        'rsvp-btn': 'Confirmar Asistencia', 'rsvp-note': 'Abre un breve formulario seguro — tarda menos de 1 minuto',
-        'footer-date': '28 – 30 de mayo de 2027 · Ronda, Málaga, España',
-        'footer-note': '¿Preguntas? Contáctanos directamente.',
-      },
-      ga: {
-        'nav-schedule': 'Clár', 'nav-gallery': 'Gailearaí', 'nav-venue': 'Ionad', 'nav-travel': 'Taisteal', 'nav-gifts': 'Bronntanais',
-        'hero-eyebrow': 'Táimid ag pósadh',
-        'hero-date': '28 – 30 Bealtaine 2027 \u00a0·\u00a0 Ronda, Málaga, An Spáinn',
-        'hero-cta': 'Freagair Anois', 'hero-scroll': 'Scrollaigh',
-        'countdown-label': 'Laethanta go dtí an bhainis',
-        'cd-days': 'Laethanta', 'cd-hours': 'Uaireanta', 'cd-mins': 'Nóiméid', 'cd-secs': 'Soicindí',
-        'schedule-label': 'An Ceiliúradh', 'schedule-title': 'Trí Lá i Ronda',
-        'day1-day': 'Lá a hAon · Aoine', 'day1-date': '28 Bealtaine 2027', 'day1-event': 'Deochanna & Tapas Réamh-Bhainis',
-        'day1-desc': 'Bí linn le haghaidh traidisiún clasúil Spáinneach na pre-boda — tráthnóna deochanna agus tapas neamhfhoirmiúla agus sinn ag fáiltiú romhat go Ronda. Cruinniú suaimhneach dúinn go léir chun athcheangal a dhéanamh agus ullmhú don lá mór.<br><br><em>Ionad le deimhniú — coinnigh súil air seo.</em>',
-        'day2-day': 'Lá a Dó · Satharn', 'day2-date': '29 Bealtaine 2027', 'day2-event': 'An Bhainis',
-        'day2-desc': "An lá mór! Bí linn chun ár bpósadh a cheiliúradh ag Finca La Marabulla le radharcanna iontacha ar Ronda agus a droichead cáiliúil. Táimid fós ag críochnú ord an lae ach tosóimid timpeall 13:00 agus leanfaidh an chóisir go dtí uaireanta beaga an Domhnaigh. Roinneoimid sonraí faoi iompar chuig an Finca agus ón Finca agus faoin gcód éadaigh níos gaire don am.<br><br><em>Ionad: Finca La Marabulla, Ronda.</em>",
-        'day3-day': 'Lá a Trí · Domhnach', 'day3-date': '30 Bealtaine 2027', 'day3-event': 'Brunch Slán',
-        'day3-desc': 'Bí linn le haghaidh brunch suaimhneach slán agus sinn ag cur críoch leis na ceiliúradh agus ag fágáil slán. Maidin neamhfhoirmiúil chun deireadh na gréine Andalúisí a bhlaiseadh le chéile roimh dul abhaile le cuimhní iontacha.<br><br><em>Ionad le deimhniú — coinnigh súil air seo.</em>',
-        'gallery-label': 'Jerome agus Enrique', 'gallery-title': 'Ár Scéal i bPictiúir',
-        'venue-label': 'Cá háit', 'venue-title': 'Finca La Marabulla', 'venue-subtitle': 'Ronda, Málaga, Andalúis',
-        'venue-p1': "Suite ar chnoic Sierra de las Nieves, is seanbhfeirm Spáinneach go hálainn athchóirithe é Finca La Marabulla atá timpeallaithe ag gáirdíní ológ agus tírdhreach leathan Andalúiseach. Beidh sé mar bhaile againn don searmanas pósta agus don dinnéar.",
-        'venue-p2': "Is ceann de bhailte is drámatúla na Spáinne í Ronda féin, lena tithe bána cáiliúla agus a droichead os cionn an Tajo, le radharcanna a spreag scríbhneoirí agus taistealaithe le céadta bliain. Táimid ar bís é a roinnt leat.",
-        'venue-link1': 'Tabhair cuairt ar shuíomh La Marabulla →', 'venue-link2': 'Féach ar Ronda ar Google Maps →',
-        'travel-label': 'Ag Teacht Anseo', 'travel-title': 'Taisteal & Lóistín',
-        'travel-air-title': 'Ar Eitleán',
-        'travel-air-desc': 'Is iad na haerfoirt idirnáisiúnta is gaire ná <strong>Málaga</strong> agus <strong>Sevilla</strong>. Tá eitiltí díreacha chuig an dá cheann ó Bhaile Átha Cliath, Corcaigh agus ar fud na hEorpa. Má tá tú ag teacht ó lasmuigh den Eoraip, is é Málaga an rogha is gaire duit le haghaidh naisc trasatlantacha. Is féidir leat freisin eitilt go Maidrid, Barcelona nó Faro (An Phortaingéil) más mian leat saoire níos faide a dhéanamh.',
-        'travel-car-title': 'Ar Carr',
-        'travel-car-desc': 'Tá Ronda thart ar 110 km (1u 20n) ó aerfort Málaga agus 140 km ó Sevilla (2u) ar charr. Tá carranna ar cíos ar fáil ag gach aerfort in aice láimhe.',
-        'travel-train-title': 'Ar Thraein',
-        'travel-train-desc': 'Tá stáisiún traenach ag Ronda le seirbhísí díreacha ó Málaga (2.5 u.c.) agus naisc ó Mhaidrid. Bealach radharc breá agus suaimhneach le teacht.',
-        'travel-stay-title': 'Cá háit le Fanacht',
-        'travel-stay-desc': 'Tá réimse leathan lóistín ag Ronda — ó óstáin boutique sa sean-chathair go fincaí tuaithe sna cnoic máguaird. Molaimid áirithint luath a dhéanamh mar is tréimhse choitianta í Bealtaine. Tuilleadh sonraí le teacht.',
-        'rsvp-label': 'Le do Thoil Freagair', 'rsvp-deadline-prefix': 'Freagair roimh',
-        'rsvp-deadline-date': 'chomh luath agus is féidir',
-        'rsvp-desc': "Inis dúinn le do thoil an mbeidh tú ag teacht linn go Ronda trí chliceáil ar an gcnaipe thíos. Ní thógann an fhoirm ach níos lú ná nóiméad.",
-        'rsvp-btn': 'Freagair Anois', 'rsvp-note': 'Osclaíonn foirm ghearr shlán — níos lú ná 1 nóiméad',
-        'footer-date': '28 – 30 Bealtaine 2027 · Ronda, Málaga, An Spáinn',
-        'footer-note': 'Ceisteanna? Déan teagmháil linn go díreach.',
-      }
-    };
-
-    let currentLang = localStorage.getItem('wedding-lang') || 'en';
-
-    function setLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('wedding-lang', lang);
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang]?.[key] !== undefined) el.innerHTML = translations[lang][key];
-      });
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-      document.getElementById('btn-ga').classList.toggle('active', lang === 'ga');
-    }
-    setLanguage(currentLang);
-
-    // ─── Mobile Nav ───────────────────────────────────────────────────────────
-    const hamburger   = document.getElementById('hamburger');
-    const navLinks    = document.getElementById('navLinks');
-    const navBackdrop = document.getElementById('navBackdrop');
-
-    function openMenu() {
-      navLinks.classList.add('open');
-      navBackdrop.classList.add('open');
-      hamburger.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
-      navLinks.classList.remove('open');
-      navBackdrop.classList.remove('open');
-      hamburger.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    hamburger.addEventListener('click', () => navLinks.classList.contains('open') ? closeMenu() : openMenu());
-    navBackdrop.addEventListener('click', closeMenu);
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-
-    // ─── Countdown ────────────────────────────────────────────────────────────
-    function updateCountdown() {
-      const target = new Date('2027-05-29T12:00:00');
-      const now    = new Date();
-      const diff   = target - now;
-      if (diff <= 0) {
-        const msgs = { en: 'Today is the day! 🎉', es: '¡Hoy es el gran día! 🎉', ga: 'Inniu an lá mór! 🎉' };
-        document.getElementById('countdown').innerHTML = `<p style="color:#fdf8f2;font-family:var(--font-display);font-style:italic;font-size:var(--text-xl)">${msgs[currentLang] || msgs.en}</p>`;
-        return;
-      }
-      const days  = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-      const mins  = Math.floor((diff % (1000*60*60)) / (1000*60));
-      const secs  = Math.floor((diff % (1000*60)) / 1000);
-      document.getElementById('cd-days').textContent  = String(days).padStart(3,'0');
-      document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-      document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
-      document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    // ─── Scroll reveals ───────────────────────────────────────────────────────
-    const reveals = document.querySelectorAll('.schedule-card, .travel-card, .gallery-item, .venue-grid');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-  </script>
-  <script>
-
-    // ─── Password Gate ────────────────────────────────────────────────────────
-    (function() {
-      const PASS = 'emjw27';
-      const KEY  = 'wedding-access';
-      const gate   = document.getElementById('password-gate');
-      const input  = document.getElementById('gate-input');
-      const btn    = document.getElementById('gate-btn');
-      const errMsg = document.getElementById('gate-error');
-
-      function unlock() {
-        gate.style.transition = 'opacity 0.5s ease';
-        gate.style.opacity = '0';
-        setTimeout(() => { gate.style.display = 'none'; }, 500);
-      }
-
-      if (sessionStorage.getItem(KEY) === '1') { unlock(); }
-
-      function attempt() {
-        if (input.value === PASS) {
-          sessionStorage.setItem(KEY, '1');
-          unlock();
-        } else {
-          errMsg.textContent = 'Incorrect password. Please try again.';
-          input.value = '';
-          input.focus();
-        }
-      }
-
-      btn.addEventListener('click', attempt);
-      input.addEventListener('keydown', e => { if (e.key === 'Enter') attempt(); });
-    })();
-  </script>
-</body>
-</html>
+        'venue-link1': 'Visitar la web de La 
